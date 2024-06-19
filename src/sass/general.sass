@@ -1,0 +1,795 @@
+@import components/mixin
+
+html
+    font-size: 0.6px
+    +media(635)
+        font-size: 0.8px
+    +media(1000)
+        font-size: 1px
+    +media(2000)
+        font-size: 1.3px
+body
+    margin: 0 auto
+    font-family: "Montserrat"
+
+
+
+// Загальні класи
+
+
+
+.wrapper
+    max-width: 1320rem
+    margin: 0 auto
+    padding: 0 20rem
+
+.flex-between
+    display: flex
+    justify-content: space-between
+    align-items: center
+    column-gap: 20rem
+    row-gap: 20rem
+
+.menu
+    list-style: none
+    padding: 0
+    margin: 0
+
+figure
+    margin: 0
+
+.button
+    position: relative
+    padding: 6rem 15rem
+    border-radius: 8rem
+    text-decoration: none
+    color: #21201E
+    font-weight: 500
+    font-size: 14rem
+    background: #F9B50A
+    transition: .5s ease all
+    box-sizing: border-box
+.flex
+    display: flex
+    align-items: center
+.flexTop
+    display: flex
+    justify-content: space-between
+
+
+
+// Header-info
+
+
+.header-info
+    padding: 16rem 0
+    background: #21201E
+    p
+        &:hover
+            a
+                color: #fff
+.header-info-wrap
+    flex-wrap: wrap
+    justify-content: center
+    +media(445)
+        flex-wrap: nowrap
+        justify-content: space-between
+.telephone
+    a
+        position: relative
+        text-decoration: none
+        color: #fff
+        display: inline-block
+        font-weight: 400
+        font-size: 14rem
+        &+ a
+            padding-left: 45rem
+            &:before
+                content: '/'
+                position: absolute
+                left: 20rem
+                top: 0
+                font-size: 14rem
+        &:hover
+            color: #F9B50A
+            &::before
+                color: #fff
+    
+
+    
+
+// Header-line
+.header-line
+    justify-content: space-between
+    // +media(495)
+    //     flex-wrap: nowrap
+
+.logo
+    max-width: 144rem
+    img
+        width: 100%
+.header-menu
+    position: relative
+    padding: 54rem 0
+    max-width: 180rem
+    width: 100%
+    +media(495)
+        max-width: 500rem
+        width: 100%
+    &>ul
+        display: block
+        +media(495)
+            display: flex
+        li
+            &:first-child
+                position: relative
+            a
+                color: #222
+                text-decoration: none
+                font-weight: 600
+                font-size: 18rem
+                transition: .5s ease all
+                &:first-child
+                    padding-left: 20rem
+        span
+            &:last-child
+                position: absolute
+                top: 50%
+                left: 0
+                width: 15rem
+                height: 2rem
+                background: #222
+                transform: translate(0, -50%)
+                transition: .5s ease all
+            &:nth-child(2)
+                position: absolute
+                top: calc(50% - 3rem)
+                left: 0
+                width: 15rem
+                height: 2rem
+                background: #222
+                transform: translate(0, -50%)
+                transition: .5s ease all
+            &:nth-child(3)
+                position: absolute
+                display: inline-block
+                top: calc(50% + 3rem)
+                left: 0
+                width: 15rem
+                height: 2rem
+                background: #222
+                transform: translate(0, -50%)
+                transition: .5s ease all
+        // li
+        //     &:hover
+        //         a
+        //             color: #F9B50A
+        //         span
+        //             background: #F9B50A
+        //             &::after
+        //                 background: #F9B50A
+        //             &::before
+        //                 background: #F9B50A 
+div.sub-menu
+    position: absolute
+    display: none
+    max-width: 400rem
+    padding: 0 20rem 20rem
+    width: 100%
+    top: 100%
+    left: 0
+    background: #fff
+    z-index: 3
+    li
+        padding: 19rem 0
+        border-bottom: 1px solid #9d9d9d
+        span
+            display: flex
+            align-items: center
+        &+li
+            display: flex
+            align-items: center
+        a
+            color: #222
+            font-weight: 600
+            text-decoration: none
+            font-size: 13rem
+            transition: .5s ease all
+            +media(495)
+                font-size: 18rem
+        img
+            padding-right: 15.4rem
+        &:first-child
+            &:hover
+                .sparePartsMenu
+                    display: block
+            span:after
+                content: ''
+                position: absolute
+                top: 40rem
+                right: 20rem
+                width: 14rem
+                height: 14rem
+                box-sizing: border-box
+                border-radius: 2rem
+                border: 2rem solid #F9B50A
+                border-top: none
+                border-left: none
+                transform: rotate(-45deg) translate(0, -50%)
+                transition: .5s ease all
+                +media(640)
+                    top: 25rem
+
+        &:hover 
+            cursor: pointer
+            span a
+                color: #F9B50A
+            > a
+                color: #F9B50A
+            span:after
+                transform: rotate(-135deg)
+ul.sparePartsMenu
+    display: none
+    li
+        border: none
+        padding: 10rem 10rem 0 42rem
+        a
+            font-weight: 400
+            font-size: 16rem
+.my-basket
+    display: flex
+    align-items: center
+    img
+        width: 25rem
+        height: 25rem
+        cursor: pointer
+        &:hover
+            cursor: pointer
+    div
+        position: relative
+        img
+            width: 34rem
+            height: 36rem
+            padding-left: 30rem
+
+        &::before
+            content: '0'
+            position: absolute
+            padding: 1rem 4rem
+            bottom: -4rem
+            right: 0
+            font-size: 12rem
+            background: #FFC452
+            border-radius: 50%
+            z-index: 1
+
+
+
+// Header-content
+
+
+.header-content
+    position: relative
+    background: #F9B50A
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        bottom: 30rem
+        left: 10rem
+        width: 400rem
+        height: 260rem
+        background: url(../img/rock-left.png) no-repeat
+        +media(600)
+            width: 300rem
+            height: 160rem
+        +media(2000)
+            bottom: 0
+    &::after
+        content: ''
+        position: absolute
+        top: 80rem
+        right: 0
+        width: 900rem
+        height: 680rem
+        background: url(../img/rock-right.png) no-repeat
+        +media(600)
+            right: 280rem
+            width: 800rem
+            height: 580rem
+.recent-bg
+    position: absolute
+    display: none
+    top: 0
+    left: 0
+    background: rgba(#000, .3)
+    width: 100%
+    height: 100%
+    z-index: 2
+.headerContentWrap
+    flex-wrap: wrap
+    flex-direction: column-reverse
+    align-items: flex-start
+    +media(900)
+        flex-wrap: nowrap
+        align-items: center
+        flex-direction: row
+.header-text
+    padding: 30rem 0
+    text-align: center
+    width: 100%
+    z-index: 1
+    +media(900)
+        width: 35%
+    h1
+        font-weight: 700
+        font-size: 50rem
+        line-height: 61rem
+        color: #F6F3E6
+        margin: 0 0 40rem 0
+    p
+        font-weight: 600
+        font-size: 22rem
+        line-height: 24rem
+        color: #F6F3E6
+        &:first-child
+            margin: 0 0 40rem 0
+        &:last-child
+            max-width: 178rem
+            width: 100%
+            margin: 0 auto
+    a
+        display: inline-block
+        width: 100%
+        padding: 20rem 10rem
+        font-weight: 600
+        font-size: 20rem
+        color: #F9B50A
+        text-decoration: none
+        margin: 0
+        background: #F6F3E6
+        border-radius: 10rem
+        transition: .5s ease all
+        &:hover
+            transform: scale(1.1)
+
+.header-slider
+    position: relative
+    display: block
+    width: 100%
+    padding: 50rem 0 30rem
+    +media(900)
+        width: auto
+    +media(2000)
+        padding: 100rem 0 30rem
+    &>img
+        width: 100%
+        +media(900)
+            width: auto
+    picture
+        position: absolute
+        top: 50%
+        right: -100%
+        transform: translate(100%, -85%) scale(0.5)
+        transition: 2s ease all
+        z-index: 1
+        img
+            width: 100%
+        &:nth-child(1)
+            width: 754rem
+            +media(400)
+                width: 654rem
+            +media(500)
+                width: 854rem
+            +media(500)
+                width: 1054rem
+
+        &:nth-child(2)
+            width: 654rem
+            +media(400)
+                width: 754rem
+            +media(500)
+                width: 854rem
+            +media(900)
+                width: 874rem
+
+        &:nth-child(3)
+            width: 654rem
+            +media(400)
+                width: 754rem
+            +media(500)
+                width: 854rem
+            +media(900)
+                width: 1057rem
+
+        &:nth-child(4)
+            width: 600rem
+            +media(400)
+                width: 700rem
+            +media(500)
+                width: 854rem
+            +media(900)
+                width: 925rem
+
+        &:nth-child(5)  
+            width: 700rem
+            +media(400)
+                width: 600rem
+            +media(500)
+                width: 854rem
+            +media(900)
+                width: 881rem
+
+
+
+// assortment
+.assortment
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    background: #2B2A28
+    +media(1260)
+        flex-wrap: nowrap
+    &>div
+        position: relative
+        width: 100%
+        box-sizing: border-box
+        padding: 60rem 40rem 80rem 60rem
+        text-align: center
+        background: #2B2A28
+        height: auto
+        transition: .5s ease all
+        +media(360)
+            max-width: 300rem
+        +media(958)
+            max-width: 350rem
+        +media(1260)
+
+            max-width: 300rem
+            height: 333rem
+        &:hover
+            background: #21201E
+    a
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+
+    h2
+        margin: 0 0 70rem 0
+        min-height: 50rem
+        color: #a3a3a3
+        font-weight: 700
+        font-size: 22rem
+        line-height: 24rem
+        text-align: left
+
+
+
+// popular
+
+
+.popular
+    padding: 96rem 0 45rem
+    background: #FFFFFA
+    h2
+        margin: 0
+        margin-bottom: 13rem
+        font-weight: 700
+        font-size: 36rem
+        color: #21201E
+        text-align: center
+.popular-text
+    position: relative
+    text-align: right
+    margin-bottom: 44rem
+    a
+        padding-right: 30rem
+        text-decoration: none
+        font-weight: 600
+        font-size: 24rem
+        color: #222
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            right: 0
+            width: 14rem
+            height: 14rem
+            border-radius: 2rem
+            border: 2rem solid #222
+            box-sizing: border-box
+            border-top: none
+            border-left: none
+            transform: rotate(-45deg) translate(0, -50%)
+
+
+.cards-block
+    flex-wrap: wrap
+    row-gap: 30rem
+    justify-content: center
+    +media(1370)
+        justify-content: space-between
+.card
+    position: relative
+    max-width: 315rem
+    padding: 20rem
+    box-sizing: border-box
+    border-radius: 9rem
+    min-height: 400rem
+    box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
+    +media(1370)
+        min-width: 305rem
+        min-height: auto
+
+    img
+        width: 100%
+        border-bottom: 1rem solid #D9D9D9
+    
+    .cardArticle
+        margin: 15rem 0 7rem 0
+        font-weight: 500
+        font-size: 14rem
+        color: #222
+    h3
+        margin: 0 0 6rem 0
+        font-weight: 600
+        font-size: 16rem
+        color:#222
+    a.button
+        display: inline-block
+        width: 100%
+        text-align: center
+    &:hover
+        .cardButton
+            color: #fff
+.newPosition
+    position: absolute
+    top: 0
+    left: 20rem
+    background: #222
+    font-size: 16rem
+    font-weight: 600
+    color: #fff
+    padding: 4rem 8rem
+    border-radius: 9rem
+.absolute
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+.cardPrice
+    margin: 0 0 10rem 0
+    font-weight: 600
+    font-size: 20rem
+    color: #222
+
+
+// aboutSavServis
+
+.aboutSavServisWrap
+    flex-wrap: wrap
+    justify-content: center
+    +media(870)
+        flex-wrap: nowrap
+        justify-content: space-between
+.aboutSavServis
+    padding-top: 45rem
+    +media(750)
+        background: #fffffa url(../img/borderContent.svg) no-repeat
+        background-position: -250rem 65rem
+    +media(950)
+        background-position: -150rem 65rem
+    +media(1250)
+        background-position: -5rem 65rem
+    +media(2000)
+        background-size: 40%
+    h2
+        margin: 0 auto
+        margin-bottom: 40rem
+        text-align: center
+        font-weight: 700
+        font-size: 40rem
+.assortmentSav,
+.storage
+    flex-wrap: wrap
+    background: #fff
+    padding: 40rem 30rem
+    max-width: 650rem
+    box-sizing: border-box
+    box-shadow: 0rem 0rem 24rem 4rem rgba(#000,0.1)
+    +media(870)
+        width: 150%
+        flex-wrap: nowrap
+        min-height: 500rem
+        height: 100%
+    +media(900)
+        min-height: 500rem
+    +media(1100)
+        min-height: 450rem
+    +media(1300)
+        min-height: auto
+    h3
+        margin: 0
+        margin-bottom: 20rem
+        font-weight: 700
+        font-size: 24rem
+        line-height: 29rem
+    p
+        margin: 0
+        font-weight: 500
+        font-size: 14rem
+        line-height: 17rem
+p.firstP
+    margin-bottom: 15rem
+.assortment-image
+    margin: 0 auto
+    max-width: 200rem
+    min-height: 190rem
+    width: 100%
+    height: 100%
+    background: url(../img/excavatorAbout.png) center / cover no-repeat
+    +media(870)
+        background: url(../img/excavatorAbout.png) center / cover no-repeat
+        min-width: 200rem
+    
+.stirege-image
+    margin: 0 auto
+    max-width: 280rem
+    min-height: 160rem
+    width: 100%
+    height: 100%
+    background: url(../img/loader.png) center left / cover no-repeat
+    +media(870)
+        background: url(../img/loader.png) center left / cover no-repeat
+        min-width: 225rem
+
+
+
+// Advantages 
+
+.advantages 
+    padding: 90rem 0 100rem
+    background: #F2F1EE
+    h2
+        margin: 0 0 60rem 0
+        font-weight: 700
+        font-size: 40rem
+        text-align: center
+.advantagesBlock
+    flex-wrap: wrap
+    justify-content: center
+    align-items: flex-start
+    +media(870)
+        flex-wrap: nowrap
+        align-items: center
+    div
+        max-width: 200rem
+        width: 100%
+        max-height: 340rem
+
+        +media(870)
+            max-width: 250rem
+        &:nth-child(1)
+            .advantages-image
+                background: #FFFFFA url(../img/Money.svg) no-repeat center
+            p
+                max-width: 170rem
+                width: 100%
+        &:nth-child(2)
+            .advantages-image
+                background: #FFFFFA url(../img/GoodsWeighing.svg) no-repeat center
+            p
+                max-width: 170rem
+                width: 100%
+        &:nth-child(3)
+            .advantages-image
+                background: #FFFFFA url(../img/onlineСonsulting.svg) no-repeat center
+            p
+                max-width: 170rem
+                width: 100%
+        &:nth-child(4)
+            .advantages-image
+                background: #FFFFFA url(../img/MoneyСalculation.svg) no-repeat center
+        &:nth-child(5)
+            .advantages-image
+                background: #FFFFFA url(../img/repairTools.svg) no-repeat center
+        p
+            margin: 0 auto
+            font-weight: 500
+            font-size: 24rem
+            line-height: 29rem
+            text-align: center
+            max-width: 230rem
+            min-height: 60rem
+            width: 100%
+            height: 100%
+            +media(870)
+                min-height: 80rem
+                height: 100%
+.advantages-image
+    width: 248rem
+    height: 200rem
+    border-radius: 9rem
+    margin-bottom: 30rem
+    background-size: 70% !important
+
+// footer
+footer
+    padding: 69rem 0 69rem
+    background: #222
+    h2
+        color: #fff
+        font-weight: 700
+        font-size: 40rem
+        text-align: center
+        +media(500)
+            text-align-last: left
+    h3
+        margin: 0 0 20rem 0
+        color: #fff
+        font-weight: 600
+        font-size: 20rem
+    p,a,address
+        transition: .5s ease all
+        text-decoration: none
+        margin: 0
+        color: #fff
+        font-weight: 400
+        font-size: 16rem
+.footerWrap
+    flex-wrap: wrap
+    justify-content: center
+    +media(500)
+        flex-wrap: nowrap
+        justify-content: space-between
+.footerInfo
+    display: flex
+    margin-bottom: 30rem
+    flex-wrap: wrap
+    +media(700)
+        flex-wrap: nowrap
+        
+.email
+    margin-bottom: 20rem
+    padding-right: 60rem
+    a
+        cursor: pointer
+        &:hover
+            color: #F9B50A
+.phone
+    margin-bottom: 115rem
+    a
+        display: inline-block
+        margin-bottom: 10rem
+        cursor: pointer
+        &:hover
+            color: #F9B50A
+.privacy
+    margin-bottom: 20rem
+    a
+        text-decoration: underline
+        &:hover
+            color: #F9B50A
+.address
+    margin-bottom: 54rem
+.map
+    position: relative
+    max-width: 610rem
+    width: 100%
+    height: 260rem
+    +media(550)
+        min-width: 410rem
+    +media(800)
+        min-width: 510rem
+    +media(1100)
+        min-width: 610rem
+
+
+    iframe
+        height: 100%
+        width: 100%
