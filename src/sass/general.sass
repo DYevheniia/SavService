@@ -516,7 +516,7 @@ main
     width: 100%
     padding: 50rem 0 30rem
     +media(900)
-        width: 100%
+        width: auto
     +media(2000)
         padding: 100rem 0 30rem
     +media(3000)
@@ -1101,23 +1101,40 @@ footer
 
 .teamWrap
     background: #F9B50A
-    padding: 65rem 20rem 65rem
+    padding: 65rem 20rem 0
+    +media(850)
+        padding: 65rem 20rem 65rem
     &>div
         align-items: flex-end
+        flex-wrap: wrap-reverse
+        +media(850)
+            flex-wrap: nowrap
 .teamImage
-    width: 50%
+    width: 100%
     position: relative
-    display: none
+    margin: 0 auto
+    +media(500)
+        width: 600rem
     +media(850)
+        // display: none
+        width: 50%
+    img
         display: block
+        width: 100%
+        +media(850)
+            display: none
     &::before
         content: ''
         position: absolute
-        bottom: -65rem
+        display: none
+        bottom: -85rem
         left: 0
         width: 500rem
         height: 400rem
         background: url(../img/team.png) no-repeat bottom / cover
+        transform: scale(0.9)
+        +media(850)
+            display: block
         
 .teamText
     width: 100%
