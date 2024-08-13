@@ -4,78 +4,19 @@ html(lang="uk")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel="stylesheet", href="css/style.css")
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         title Document
     body 
-        include components/mixin
-        //- include components/headerLine
         header 
-            .header-info
-                .wrapper.flex-between.header-info-wrap
-                    .telephone
-                        a(href="tel:+380977850450") +380977850450
-                        a(href="tel:+380634314591") +380634314591
-                        a(href="tel:+380673826939") +380673826939
-                    p 
-                        a(href="#", class="button") Зворотній зв’язок
-            .header-line.flex-between.wrapper
-                .logo
-                    a(href="#") 
-                        img(src="img/logo.svg", alt="")
-                .header-menu 
-                    ul.menu.flex-between
-                        li 
-                            a(href="#", id="headerMenu", class="color") Меню
-                            span.color 
-                            span.color 
-                            span.color 
-                        li 
-                            a(href="#") Про SavService
-                        li 
-                            a(href="#") Контакти
-                    .sub-menu.menu#headerSubMenu
-                        ul.menu
-                            li
-                                span
-                                    img(src="img/spareParts.svg", alt="")
-                                    a(href="#") Запчастини
-                                ul.menu.sparePartsMenu
-                                    li
-                                        a(href="#") Навісне обладнання
-                                    li
-                                        a(href="#") Електросистема
-                                    li
-                                        a(href="#") Гідравлічна система
-                                    li
-                                        a(href="#") Ходова система
-                                    li
-                                        a(href="#") Гальмівна система
-                                    li
-                                        a(href="#") Двигуни та комплектуючі
-                                    li
-                                        a(href="#") Фільтри
-                                    li
-                                        a(href="#") Масла
-                                    li
-                                        a(href="#") Аксесуари
-                            li
-                                img(src="img/repair.svg", alt="")
-                                a(href="#") Ремонт на обслуговування
-                            li
-                                img(src="img/selling.svg", alt="")
-                                a(href="#") Продаж спецтехніки
-                            li
-                                img(src="img/rent.svg", alt="")
-                                a(href="#") Оренда спецтехніки
-                .my-basket 
-                    img(src="img/search.svg", alt="")
-                    div
-                        a(href="#") 
-                            img(src="img/basket.svg", alt="")
+            include components/mixin
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+                
             .header-content 
                 .recent-bg
                 .wrapper.flex-between.headerContentWrap
@@ -83,7 +24,7 @@ html(lang="uk")
                         h1 Запчастини для JCB та інших марок
                         p В наявності більше 10000 товарних позицій для усіх видів екскаваторів та навантажувачів JCB
                         p  
-                            a(href="#") Купити 
+                            a(href="catalog.html") Купити 
                     .header-slider 
                         img(src="img/border.svg", alt="")
                         div
@@ -100,40 +41,44 @@ html(lang="uk")
         main
             .assortment
                 div
-                    a(href="#") 
+                    a(href="catalog.html") 
                     h2 Запчастини
                     div
                         img(src="img/gears.svg", alt="")
                 div
-                    a(href="#") 
+                    a(href="catalog.html") 
                     h2 Шини та Диски
-                    img(src="img/tires.svg", alt="")
+                    div
+                        img(src="img/tires.svg", alt="")
                 div
-                    a(href="#") 
+                    a(href="repair.html") 
                     h2 Ремонт та Обслуговування
-                    img(src="img/Tools.svg", alt="")
+                    div
+                        img(src="img/Tools.svg", alt="")
                 div
-                    a(href="#") 
+                    a(href="sell.html") 
                     h2 Продаж Спецтехніки
-                    img(src="img/specialEquipment.svg", alt="")
+                    div
+                        img(src="img/specialEquipment.svg", alt="")
                 div
-                    a(href="#") 
+                    a(href="rent.html") 
                     h2 Оренда Спецтехніки
-                    img(src="img/assortmentRent.svg", alt="")
+                    div
+                        img(src="img/assortmentRent.svg", alt="")
             .popular 
                 .wrapper
                     h2 Популярні товари
                     p.popular-text 
                         a(href="#") Усі товари
                     .cards-block.flex-between
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
-                        +cards(popularProducts.cardOne)
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
             .aboutSavServis
                 h2 Про SavServis
                 .wrapper.flex-between.aboutSavServisWrap
@@ -167,34 +112,5 @@ html(lang="uk")
                     div
                         .advantages-image
                         p Імпорт запчастин без посередників
-        footer 
-            .wrapper
-                h2 Контакти
-                div.flexTop.footerWrap
-                    div
-                        div.footerInfo
-                            div.email
-                                h3 Пошта:
-                                a(href="mailto:sav.service.khm@gmail.com") sav.service.khm@gmail.com
-                            div.graphic
-                                h3 Графік роботи:
-                                p з 9:00 по 18:00, <br> сб-нд вихідні
-                        div.phone
-                            h3 Телефон:
-                            p
-                                a(href="tel:+380977850450") +380977850450
-                            p
-                                a(href="tel:+380634314591") +380634314591
-                            p
-                                a(href="tel:+380673826939") +380673826939
-                        div.privacy
-                            h3
-                                a(href="#")  Політика конфіденційності
-                            p &copy; copyright by SavServis 2024
-                    div 
-                        div.address
-                            h3 Адреса:
-                            address вул. Чорновола 41/2, м. Хмельницький
-                        div.map
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d1428.292381622587!2d30.479543866250047!3d50.48796785531456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNTDCsDI5JzE2LjAiTiAzMMKwMjgnNDMuNCJF!5e0!3m2!1suk!2sua!4v1718731564929!5m2!1suk!2sua" width="610" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        include components/footer
         script(src="js/script.js") 

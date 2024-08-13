@@ -1,0 +1,99 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="css/style.css")
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    body  
+        include components/mixin
+        header
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+        main 
+            .recent-bg-bg
+            .wrapper
+                .pageNavigation.flex
+                    p
+                        a(href="index.html") головна
+                    p   
+                        a(href="catalog.html") кошик
+                    p оформлення замовлення
+            .flex-between.wrapper.order.align
+                div
+                    .data
+                        h2 Ваш  дані
+                        .flex-between
+                            div 
+                                label(for="") Імʼя*
+                                input(type="text" placeholder="Імʼя")
+                            div 
+                                label(for="") Прізвище*
+                                input(type="text" placeholder="Прізвище")
+                        .flex-between
+                            div 
+                                label(for="") Телефон*
+                                input(type="text" placeholder="+380") 
+                            div 
+                                label(for="") E-mail
+                                input(type="text" placeholder="E-mail")
+                    .flex-between.align.delivery
+                        div
+                            h2 Спосіб доставки
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Нова Пошта
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Укрпошта
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Meestexpres
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Курʼєром Нова Пошта
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Самовивіз з магазину
+                        div 
+                            h2 Спосіб оплати
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") Банківський переказ
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") LigPay
+                            div 
+                                input(type="checbox" class="checbox")
+                                label(for="" class="checboxLabel") готівкою при отриманні
+                    div 
+                        h2 Адреса доставки
+                        .flex-between.addressInput
+                            div 
+                                label(for="" ) Область*
+                                input(type="text" placeholder="Область")
+                            div 
+                                label(for="") Місто*
+                                input(type="text" placeholder="Місто")
+                        div 
+                            label(for="") Адреса*
+                            input(type="text" placeholder="Адреса")
+                .yourOrder
+                    h1 Ваше замовлення
+                    .flex-between   
+                        p 3 товари у кошику на суму:
+                        p 1731 грн
+                    .flex-between 
+                        p До оплати:
+                        p 1731 грн
+                    p Доставку сплачує покупець за тарифами транспортної компанії.
+                    hr
+                    button Підтвердити
+        include components/footer
+        script(src="js/script.js") 

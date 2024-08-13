@@ -1,0 +1,86 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        title Document
+    body 
+        include components/mixin
+        header 
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+        main 
+            .recent-bg-bg
+            .wrapper
+                .pageNavigation.flex
+                    p
+                        a(href="index.html") головна
+                    p 
+                        a(href="catalog.html") каталог
+                    p 
+                        a(href="") ходова частина
+                    p втулка моста 
+            .cardInfo.wrapper.flex-between
+                div 
+                    .bigImage 
+                        img(src="img/card-image.png", alt="")
+                    .sliderImage.flex-between
+                        span 
+                        img(src="img/card-image.png", alt="")
+                        img(src="img/card-image.png", alt="")
+                        img(src="img/card-image.png", alt="")
+                        img(src="img/card-image.png", alt="")
+                        span
+                .cardInfoText
+                    p Під замовлення
+                    h1 Втулка моста внутрішня для телескопічного навантажувача 448/26402 для JCB
+                    .flex.number
+                        p номер
+                        p 332/Go941
+                    hr
+                    .characteristic
+                        b Характеристика:
+                        div
+                            p Країна виробництва - Італія
+                            p Гарантія - 12 місяців
+                            p Марка автомобіля - Opel
+                            p Модель автомобіля - Astra J
+                    .description
+                        h3 Опис:
+                        p Lorem ipsum dolor sit amet consectetur. Egestas egestas diam commodo diam amet auctor magna phasellus tempor. Cursus et erat cras vulputate integer orci integer faucibus. Convallis vel donec lacinia nisl. Pretium elit feugiat risus eget venenatis.
+                    .flex-between
+                        .flex
+                            form(action="")
+                                .flex.cardCount
+                                    button -
+                                    p 1
+                                    button +
+                            .basketCardPrice
+                                p 577 грн
+                        button(type="submit" name="" value="1").buy Купити
+            .popular 
+                .wrapper
+                    h2 Схожі товари
+                    p.popular-text 
+                        a(href="#") Усі товари
+                    .cards-block.flex-between
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                       
+            .catalogText
+                .flex.wrapper
+                    p У разі відсутності необхідних Вам запасних частин у переліку на нашому сайті, 
+                        a(href="") заповніть тут заявку, 
+                        span або зателефонуйте нам (098 768 13 31) для спеціального замовлення цих товарів.
+        include components/footer
+        script(src="js/script.js") 

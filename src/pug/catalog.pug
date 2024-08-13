@@ -1,0 +1,152 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        title Document
+    body 
+        include components/mixin
+        header
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+        main
+            .recent-bg-bg
+            .wrapper
+                .pageNavigation.flex
+                    p
+                        a(href="index.html") головна
+                    p каталог
+            .flex-between.catalog.wrapper
+                div
+                    p Фільтр
+                    form(action="") 
+                        div
+                            p Запчастини
+                            ul.menu 
+                                li Навісне обладнання
+                                li Електросистема
+                                li Гідравлічна система
+                                li Ходова система
+                                li Гальмівна система
+                                li Двигуни та комплектуючі
+                                li Фільтри
+                                li Масла
+                                li Аксесуари
+                        .checboxBlock
+                            p Марка спецтехніки
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") JCB
+                            div
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") John Deere
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Volvo
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Hyundai
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Daewoo
+                            p більше
+                        .checboxBlock
+                            p Бренд
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") ARB
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Arisun
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Azeri
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Bergstrom
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Centa
+                            p більше
+                        .checboxBlock
+                            p Країна виробник
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") ЄС
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Індія
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Італія
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Англія
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Німеччина
+                            p більше
+                        .checboxBlock
+                            p Наявність
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") В наявності
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Недоступний
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") На замовлення
+                        .checboxBlock
+                            p ОЕМ
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Оригінал
+                            div 
+                                input(type="checkbox", name="", class="checbox")
+                                label(for="" class="checboxLabel") Замінник
+                .cards-block.flex-between
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    include components/card.pug
+                    
+                    .page
+                        ul.menu.flex
+                            li 
+                                span 
+                            li 
+                                p 1
+                            li 
+                                b 2
+                            li 
+                                p 3
+                            li  
+                                p ...
+                            li 
+                                p 80
+                            li  
+                                span
+            .catalogText
+                .flex.wrapper
+                    p У разі відсутності необхідних Вам запасних частин у переліку на нашому сайті, 
+                        a(href="") заповніть тут заявку, 
+                        span або зателефонуйте нам (098 768 13 31) для спеціального замовлення цих товарів.
+        include components/footer
+        script(src="js/script.js") 

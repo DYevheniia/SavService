@@ -1,0 +1,65 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet", href="css/style.css")
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    body 
+        include components/mixin
+        header 
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+        main 
+            .recent-bg-bg
+            .pageNavigation.flex.wrapper
+                p
+                    a(href="index.html") головна
+                p оренда спецтехніки
+            .rentBlock
+                .flex-between.wrapper
+                    div
+                        h1 Оренда спецтехніки
+                        div 
+                            p Компанія SavService надає послуги оренди спецтехніки.
+                            p В нашому автопарку сучасна нова спецтехніка та кваліфіковані оператори з багаторічним досвідом роботи.
+                            p Гарантуємо вчасне та якісне виконання робіт з індивідуальним підходом до вимог клієнтів.
+                    div 
+                        img(src="img/excavator.png", alt="")
+            .popular.wrapper
+                h2 Популярні товари
+                .cards-block.flex-between
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+                    include components/secondCard
+            .page.wrapper
+                ul.menu.flex
+                    li 
+                        span 
+                    li 
+                        p 1
+                    li 
+                        b 2
+                    li 
+                        p 3
+                    li  
+                        p ...
+                    li 
+                        p 80
+                    li  
+                        span
+                
+        include components/footer
+        script(src="js/script.js") 

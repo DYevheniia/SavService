@@ -1,0 +1,37 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="css/style.css")
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        title Document
+    body 
+        header 
+            include components/headerLine
+            .bgAbsolute
+            .formContactsAbsolute
+                include components/formContacts
+        main 
+            .recent-bg-bg
+            .wrapper.mainBasket
+                .pageNavigation.flex
+                    p
+                        a(href="index.html") головна
+                    p кошик
+                form(action="") 
+                    include components/basketCard
+                    include components/basketCard
+                    include components/basketCard
+                    .basketMoney
+                        .flex-between                            
+                            p До оплати:
+                            b 1731 грн
+                        .flex-between 
+                            //- button(type="submit") Оформити замовлення
+                            a(href="order.html")  Оформити замовлення
+                            a(href="catalog.html") Назад у каталог 
+        include components/footer
+        script(src="js/script.js") 

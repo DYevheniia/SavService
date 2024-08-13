@@ -1,23 +1,22 @@
--
-    let popularProducts = {
-        cardOne: {
-            new: "Новий", 
-            img: "img/card-image.png",
-            alt: "",
-            article: "332/GO941", 
-            headerline: "Втулка моста внутрішня",
-            price: "577 грн",
-            href: ""
-        },
-    }
+//- -
+//-     let popularProducts = {
+//-         cardOne: {
+//-             new: "Новий", 
+//-             img: "img/card-image.png",
+//-             alt: "",
+//-             article: "332/GO941", 
+//-             headerline: "Втулка моста внутрішня",
+//-             price: "577 грн",
+//-             href: "goods.html"
+//-         },
+//-     }
 
-mixin cards(card) 
-    figure.card
-        figcaption 
-            a(href="#", class="absolute") 
-            p.newPosition #{card.new}
-            img(src=card.img, alt=card.alt)
-            p.cardArticle #{card.article}
-            h3 #{card.headerline}
-            p.cardPrice #{card.price}
-            a(href=card.href, class="button cardButton") Замовити 
+//- mixin cards(card) 
+//-     figure.card
+//-         figcaption 
+//-             p.newPosition #{card.new}
+//-             img(src=card.img, alt=card.alt)
+//-             p.cardArticle #{card.article}
+//-             h3 #{card.headerline}
+//-             p.cardPrice #{card.price}
+//-             a(href=card.href, class="button cardButton") Замовити 
