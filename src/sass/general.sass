@@ -997,11 +997,12 @@ footer
         min-width: 510rem
     +media(1100)
         min-width: 610rem
-
-
     iframe
         height: 100%
         width: 100%
+
+.mapContact
+
 
 
 
@@ -1157,7 +1158,7 @@ footer
     .flex-between
         align-items: flex-start
         flex-wrap: wrap
-        +media(700)
+        +media(800)
             flex-wrap: nowrap
         .box,
         form
@@ -1279,6 +1280,10 @@ footer
         margin: 0
     b
         text-decoration: underline
+        transition: .5s ease all
+        &:hover
+            cursor: pointer
+            color: #F9B50A
     &::before
         content: ''
         position: absolute

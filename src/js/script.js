@@ -207,3 +207,57 @@ if (page == "/index.html" || page == "/") {
         }, 2400)
     }
 }
+
+// Регулярка на імʼя, можна вводити лише букви 
+
+
+
+// Регулярка для номеру телефону, можна вводити + та та цифри
+const yourNumber = document.querySelectorAll(".yourNumber")
+
+// yourNumber.forEach(number => {
+//     number.addEventListener("input", function (e) {
+//         const inputValue = this.value
+//         const allowedChars = /[0-9+]/
+//         for (let i = 0; i < inputValue.length; i++) {
+//             const char = inputValue[i];
+//             if (!allowedChars.test(char)) {
+//                 // Видалити недозволений символ
+//                 this.value = inputValue.slice(0, i) + inputValue.slice(i + 1);
+//                 break; // Зупинити цикл, якщо знайдено недозволений символ
+//             }
+//         }
+//     })
+// })
+
+yourNumber.forEach(number => {
+    number.addEventListener("input", function (e) {
+        const inputValue = this.value;
+        
+        // Перевірка першого символу
+        const startsWithPlus = inputValue.startsWith('+');
+        
+        // Регулярні вирази для перевірки вводу
+        const allowedChars = startsWithPlus ? /^\+?\d{0,12}$/ : /^\d{0,10}$/;
+        
+        // Оновлення значення відповідно до регулярного виразу
+        if (!allowedChars.test(inputValue)) {
+            this.value = inputValue.slice(0, -1);
+        }
+    });
+});
+
+// phone.forEach(tel => {
+//     tel.addEventListener('input', function(event) {
+//       const inputValue = this.value;
+//       const allowedChars = /[0-9]/; // Дозволені символи (цифри)
+//       for (let i = 0; i < inputValue.length; i++) {
+//         const char = inputValue[i];
+//         if (!allowedChars.test(char)) {
+//           // Видалити недозволений символ
+//           this.value = inputValue.slice(0, i) + inputValue.slice(i + 1);
+//           break; // Зупинити цикл, якщо знайдено недозволений символ
+//         }
+//       }
+//     });
+// })
