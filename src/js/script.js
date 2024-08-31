@@ -81,7 +81,7 @@ policyFooter.forEach(footer => {
 
 // Відкриття політики конфідеційності в попапі на сторінці контакти
 
-if (page == "/contacts.html") {
+if (page == "/SavService/contacts.html") {
     const policyArrContacts = document.querySelectorAll(".policyContacts"),
         privacyPolicyBlockContacts = document.querySelectorAll(".privacyPolicyContacts"),
         crossPolicyContacts = document.querySelectorAll(".crossPolicyContacts")
@@ -135,7 +135,7 @@ const headerMenu = document.querySelectorAll("#headerMenu"),
     arrowArr = document.querySelectorAll(".arrow"),
     colorA = document.querySelectorAll(".colorA")
 console.log(page);
-if (page == "/index.html" || page == "/") { 
+if (page == "/SavService/index.html" || page == "/SavService/") { 
     headerMenu.forEach(menu => {
         headerSubMenu.forEach(subMenu => {
             menu.addEventListener("click", function () {
@@ -225,7 +225,7 @@ arrowArr.forEach(arrow => {
 
 const excavator = [...document.querySelectorAll(".excavator")]
 
-if (page == "/index.html" || page == "/") {
+if (page == "/SavService/index.html" || page == "/SavService/") {
         let excavatorI = 0
     animateElement()
     setInterval(() => {
@@ -361,7 +361,7 @@ document.querySelectorAll(".mainMenu > li").forEach(mainLi => {
 
 
 
-if (page == "/goods.html") {
+if (page == "/SavService/goods.html") {
     const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width,
         sliderImage = document.querySelectorAll(".slider-container img")
     window.addEventListener("load", function () {
