@@ -25,94 +25,183 @@ html(lang="en")
                         a(href="index.html") головна
                     p каталог
             .flex-between.catalog.wrapper
-                div
+                .w100
                     p Фільтр
-                    form(action="") 
-                        div
+                    form(action="").clickForm
+                        .checboxBlock
                             p Запчастини
-                            ul.menu 
-                                li Навісне обладнання
-                                li Електросистема
-                                li Гідравлічна система
-                                li Ходова система
-                                li Гальмівна система
-                                li Двигуни та комплектуючі
-                                li Фільтри
-                                li Масла
-                                li Аксесуари
+                            ul.menu.mainMenu
+                                li
+                                    .flex-between
+                                        a(href="").absolute
+                                        h3 Навісне обладнання
+                                        span
+                                    ul.menu.catalogSubMenu
+                                        li 
+                                            h4 Ковші
+                                        li 
+                                            h4 Леміші
+                                        li 
+                                            h4 Зуби
+                                li
+                                    .flex-between
+                                        a(href="").absolute
+                                        h3 Електросистема
+                                        span
+                                    ul.menu.catalogSubMenu
+                                        li 
+                                            h4 Електрообладнання двигуна
+                                        li 
+                                            h4 Електрообладнання кабіни
+                                        li 
+                                            h4 Електрообладнання машини
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Гідравлічна система
+                                        span
+                                    ul.menu.catalogSubMenu
+                                        li 
+                                            h4 Гідравлічні вузли
+                                        li 
+                                            h4 Гідравлічні насоси
+                                        li 
+                                            h4 Гідравлічні шланги та трубки
+                                        li 
+                                            h4 Гідроциліндри і комплектуючі
+                                        li 
+                                            h4 Розподільники і клапана
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Ходова система
+                                        span
+                                    ul.menu.catalogSubMenu
+                                        li 
+                                            h4 Мости та комплектуючі
+                                        li 
+                                            h4 Шасі та комплектуючі
+                                        li 
+                                            h4 Карданні вали
+                                        li 
+                                            h4 Комплектуючі КПП
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Гальмівна система
+                                        //- span
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Двигуни та комплектуючі
+                                        span
+                                    ul.menu.catalogSubMenu
+                                        li 
+                                            h4 Блок та комплектуючі
+                                        li 
+                                            h4 ГБЦ та комплектуючі
+                                        li 
+                                            h4 Елементи приводу двигуна
+                                        li 
+                                            h4 Навісне обладнання двигуна
+                                        li 
+                                            h4 Паливна система
+                                        li 
+                                            h4 Прокладки та ущільнення
+                                        li 
+                                            h4 Система змащення
+                                        li 
+                                            h4 Система охолодження
+                                        li 
+                                            h4 Система рециркуляції газів
+                                li  
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Фільтри
+                                        //- span
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Масла
+                                        //- span
+                                li
+                                    .flex-between 
+                                        a(href="").absolute
+                                        h3 Аксесуари
+                                        //- span
                         .checboxBlock
                             p Марка спецтехніки
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") JCB
+                                input(type="checkbox", name="", class="checkbox" id="jcb")
+                                label(for="jcb" class="checkboxLabel") JCB
                             div
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") John Deere
+                                input(type="checkbox", name="", class="checkbox" id="johnDeere")
+                                label(for="johnDeere" class="checkboxLabel") John Deere
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Volvo
+                                input(type="checkbox", name="", class="checkbox" id="volvo")
+                                label(for="volvo" class="checkboxLabel") Volvo
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Hyundai
+                                input(type="checkbox", name="", class="checkbox" id="hyundai")
+                                label(for="hyundai" class="checkboxLabel") Hyundai
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Daewoo
+                                input(type="checkbox", name="", class="checkbox" id="daewoo")
+                                label(for="daewoo" class="checkboxLabel") Daewoo
                             p більше
                         .checboxBlock
                             p Бренд
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") ARB
+                                input(type="checkbox", name="", class="checkbox" id="arb")
+                                label(for="arb" class="checkboxLabel") ARB
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Arisun
+                                input(type="checkbox", name="", class="checkbox" id="arisun")
+                                label(for="arisun" class="checkboxLabel") Arisun
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Azeri
+                                input(type="checkbox", name="", class="checkbox" id="azeri")
+                                label(for="azeri" class="checkboxLabel") Azeri
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Bergstrom
+                                input(type="checkbox", name="", class="checkbox" id="bergstrom")
+                                label(for="bergstrom" class="checkboxLabel") Bergstrom
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Centa
+                                input(type="checkbox", name="", class="checkbox" id="centa")
+                                label(for="centa" class="checkboxLabel") Centa
                             p більше
                         .checboxBlock
                             p Країна виробник
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") ЄС
+                                input(type="checkbox", name="", class="checkbox" id="es")
+                                label(for="es" class="checkboxLabel") ЄС
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Індія
+                                input(type="checkbox", name="", class="checkbox" id="india")
+                                label(for="india" class="checkboxLabel") Індія
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Італія
+                                input(type="checkbox", name="", class="checkbox" id="italy")
+                                label(for="italy" class="checkboxLabel") Італія
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Англія
+                                input(type="checkbox", name="", class="checkbox" id="england")
+                                label(for="england" class="checkboxLabel") Англія
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Німеччина
+                                input(type="checkbox", name="", class="checkbox" id="Germany")
+                                label(for="Germany" class="checkboxLabel") Німеччина
                             p більше
                         .checboxBlock
                             p Наявність
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") В наявності
+                                input(type="checkbox", name="", class="checkbox" id="inStock")
+                                label(for="inStock" class="checkboxLabel") В наявності
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Недоступний
+                                input(type="checkbox", name="", class="checkbox" id="inaccessible")
+                                label(for="inaccessible" class="checkboxLabel") Недоступний
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") На замовлення
+                                input(type="checkbox", name="", class="checkbox" id="toOrder")
+                                label(for="toOrder" class="checkboxLabel") На замовлення
                         .checboxBlock
                             p ОЕМ
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Оригінал
+                                input(type="checkbox", name="", class="checkbox" id="original")
+                                label(for="original" class="checkboxLabel") Оригінал
                             div 
-                                input(type="checkbox", name="", class="checbox")
-                                label(for="" class="checboxLabel") Замінник
+                                input(type="checkbox", name="", class="checkbox" id="substitute")
+                                label(for="substitute" class="checkboxLabel") Замінник
                 .cards-block.flex-between
                     include components/card.pug
                     include components/card.pug

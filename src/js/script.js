@@ -1,4 +1,5 @@
 const page = window.location.pathname //визначити на якій сторінці зараз находимось
+
 // Клік на кнопку зворотній звʼязок, поява попапу та заднього фону
 
 const feedback = document.querySelectorAll(".feedback"),
@@ -21,6 +22,10 @@ feedback.forEach(back => {
                     bg.classList.toggle("feedbackBlock")
                 })
             })
+            bg.addEventListener("click", function () {
+                bg.classList.toggle("feedbackBlock")
+                form.classList.toggle("feedbackBlock")
+            })
         })
     })
 })
@@ -34,7 +39,7 @@ const policyArr = document.querySelectorAll(".policy"),
 policyArr.forEach(policy => {
     privacyPolicyBlock.forEach(privacy => {
         policy.addEventListener("click", function (e) {
-            e.preventDefault();
+            e.preventDefault()
             privacy.classList.toggle("privacyPolicyBlock")
         })
         crossPolicy.forEach(cross => {
@@ -45,7 +50,26 @@ policyArr.forEach(policy => {
     })
 })
 
+// Відкриття політики конфідеційності в попапі в футері
+
+const policyFooter = document.querySelectorAll(".policyFooter"),
+    privacyPolicyFooter = document.querySelectorAll(".privacyPolicyFooter"),
+    crossPolicyFooter = document.querySelectorAll(".crossPolicyFooter")
+
+policyFooter.forEach(footer => {
+    privacyPolicyFooter.forEach(PolicyFooter => {
+        footer.addEventListener("click", function (e) {
+            e.preventDefault()
+            PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+        })
+        crossPolicyFooter.forEach(footerCroos => {
+            PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+        })
+    })
+})
+
 // Відкриття політики конфідеційності в попапі на сторінці контакти
+
 if (page == "/contacts.html") {
     const policyArrContacts = document.querySelectorAll(".policyContacts"),
         privacyPolicyBlockContacts = document.querySelectorAll(".privacyPolicyContacts"),
@@ -170,6 +194,8 @@ if (page == "/index.html" || page == "/") {
     })
 }
 
+// Відкриття сабменю при кліку на стрілочку
+
 const absoluteHeight = document.querySelectorAll(".absoluteHeight")
 
 arrowArr.forEach(arrow => {
@@ -184,10 +210,12 @@ arrowArr.forEach(arrow => {
     })
 })
 
+// Слайдер на головній сторінці(машини)
+
+const excavator = [...document.querySelectorAll(".excavator")]
+
 if (page == "/index.html" || page == "/") {
-    const excavator = [...document.querySelectorAll(".excavator")]
         let excavatorI = 0
-    
     animateElement()
     setInterval(() => {
         if (excavatorI == excavator.length-1) {
@@ -209,26 +237,28 @@ if (page == "/index.html" || page == "/") {
 }
 
 // Регулярка на імʼя, можна вводити лише букви 
+const yourName = document.querySelectorAll(".yourName")
 
 
+yourName.forEach(nameInput => {
+    nameInput.addEventListener('input', function(event) {
+      const inputValue = this.value;
+      const allowedChars = /[^0-9-_+=@#$%^&*(){}/.,?!\s"']/; // Дозволені символи (букви українського та латинського алфавітів)
+    
+      for (let i = 0; i < inputValue.length; i++) {
+        const char = inputValue[i];
+        if (!allowedChars.test(char)) {
+          // Видалити недозволений символ
+          this.value = inputValue.slice(0, i) + inputValue.slice(i + 1);
+          break; // Зупинити цикл, якщо знайдено недозволений символ
+        }
+      }
+    });
+})
 
 // Регулярка для номеру телефону, можна вводити + та та цифри
-const yourNumber = document.querySelectorAll(".yourNumber")
 
-// yourNumber.forEach(number => {
-//     number.addEventListener("input", function (e) {
-//         const inputValue = this.value
-//         const allowedChars = /[0-9+]/
-//         for (let i = 0; i < inputValue.length; i++) {
-//             const char = inputValue[i];
-//             if (!allowedChars.test(char)) {
-//                 // Видалити недозволений символ
-//                 this.value = inputValue.slice(0, i) + inputValue.slice(i + 1);
-//                 break; // Зупинити цикл, якщо знайдено недозволений символ
-//             }
-//         }
-//     })
-// })
+const yourNumber = document.querySelectorAll(".yourNumber")
 
 yourNumber.forEach(number => {
     number.addEventListener("input", function (e) {
@@ -247,17 +277,70 @@ yourNumber.forEach(number => {
     });
 });
 
-// phone.forEach(tel => {
-//     tel.addEventListener('input', function(event) {
-//       const inputValue = this.value;
-//       const allowedChars = /[0-9]/; // Дозволені символи (цифри)
-//       for (let i = 0; i < inputValue.length; i++) {
-//         const char = inputValue[i];
-//         if (!allowedChars.test(char)) {
-//           // Видалити недозволений символ
-//           this.value = inputValue.slice(0, i) + inputValue.slice(i + 1);
-//           break; // Зупинити цикл, якщо знайдено недозволений символ
-//         }
-//       }
-//     });
-// })
+// Ремонтуємо техніку при кліку на кнопку замовити відкривається попап
+
+const repairOrder = document.querySelectorAll(".repairOrder"),
+    orderPopap = document.querySelector(".formContactsAbsolute1"),
+    bgAbsoluteOrder = document.querySelectorAll(".bgAbsoluteOrder"),
+    crossOrder = document.querySelectorAll(".crossOrder")
+
+repairOrder.forEach(order => {
+    console.log("femklj");
+    bgAbsoluteOrder.forEach(bg => {
+        order.addEventListener("click", function (e) {
+            e.preventDefault()
+            console.log("1");
+            bg.classList.toggle("repairOrderRecentBgBg")
+            orderPopap.classList.toggle("orderPopapBlock")
+        })
+    })
+})
+crossOrder.forEach(cross => {
+    bgAbsoluteOrder.forEach(bg => {
+        cross.addEventListener("click", function () {
+            bg.classList.toggle("repairOrderRecentBgBg")
+            orderPopap.classList.toggle("orderPopapBlock")
+        })
+        bg.addEventListener("click", function () {
+            console.log("kdsmflk");
+            orderPopap.classList.toggle("orderPopapBlock")
+            bg.classList.toggle("repairOrderRecentBgBg")
+        })
+    })
+})
+
+// слайдер картинок товару
+
+
+// клік на заголовок фільтру відкривається фільтер на весь екран
+
+document.querySelectorAll(".mainMenu > li").forEach(mainLi => {
+    // Select the submenu that is immediately following this menu item
+    const submenu = mainLi.querySelector(".catalogSubMenu");  
+    const arrowSub = mainLi.querySelector("span"); // Assuming the arrow is a span directly inside the li
+
+    if (arrowSub) {
+        mainLi.addEventListener("click", function (e) {
+            e.preventDefault();
+    
+            // Toggle visibility of the submenu
+            submenu.classList.toggle("catalogSubBlock");
+            arrowSub.classList.toggle("arrowRotate");
+
+            // Optionally close other submenus if you want to ensure only one submenu is open at a time
+            document.querySelectorAll(".catalogSubMenu").forEach(sub => {
+                if (sub !== submenu) {
+                    sub.classList.remove("catalogSubBlock");
+                }
+            });
+
+            // Optionally reset arrow rotation for other items
+            document.querySelectorAll(".mainMenu > li span").forEach(span => {
+                if (span !== arrowSub) {
+                    span.classList.remove("arrowRotate");
+                }
+            });
+        });
+    }
+});
+

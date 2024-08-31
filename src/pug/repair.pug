@@ -18,7 +18,32 @@ html(lang="en")
             .formContactsAbsolute
                 include components/formContacts
         main 
+            .bgAbsoluteOrder
             .recent-bg-bg
+            .formContactsAbsolute1
+                form(action="", method="post", class="orderPopap") 
+                    .crossOrder
+                    h3 Зворотній звʼязок
+                    p Маєте питання чи пропозиції? Ви завжди можете звʼязатися з нами.  
+                    .flex-between.contactInfo
+                        div 
+                            label(for="") Ваше імʼя*
+                            input(type="text" placeholder="Ваше імʼя").yourName
+                        div 
+                            label(for="") Телефон*
+                            input(type="text" placeholder="+38").yourNumber
+                    .flex.radioBlock
+                        .flex
+                            input(type="radio", name="repair", id="serviceInput") 
+                            label(for="serviceInput") Обслуговування
+                        .flex
+                            input(type="radio", name="repair", id="repairInput")
+                            label(for="repairInput") Ремонт
+                    .flex.w100
+                        input(type="checkbox",id="orderPopapCheckbox" name="").checkbox
+                        label(for="orderPopapCheckbox" class="flex checkboxLabel") 
+                            p Я прочитав (ла) <b class="policy">політику конфіденційності</b> і згоден (на) з вимогами 
+                    button(type="submit", name="", class="contactButton") Відправити
             .repairBlock
                 .wrapper
                     h1 Ремонтуємо техніку JCB. Зокрема виконуємо наступне:
@@ -49,7 +74,7 @@ html(lang="en")
                                     p заміну: турбіни, стартера, генератора, радіатора, вентилятора, форсунок, датчиків, подушок та піддону двигуна, ременів та роликів, шлангів, патрубків, акумулятора;
                                 li
                                     p монтаж/демонтаж головки блока циліндрів двигуна, заміну маховика, прокладок та сальників;
-                            p.but
+                            p.but.repairOrder
                                 a(href="") Замовити
                         .CenterImageWrap
                             img(src="img/wheeledExcavator.png", alt="")
@@ -78,7 +103,7 @@ html(lang="en")
                                 p Заміна гідравлічних шлангів
                     div.pro
                         p На професійному устаткуванні, методом наплавлення та розточування ми відновлюємо стандартні розміри посадкових місць втулок та пальців.
-                        p.but
+                        p.but.repairOrder
                             a(href="") Замовити
                 div.bg
                     h2 Ремонт:

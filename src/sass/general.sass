@@ -83,7 +83,8 @@ textarea
     flex-wrap: wrap-reverse
 
 
-.formContactsAbsolute
+.formContactsAbsolute,
+.formContactsAbsolute1
     display: none
     width: 90%
     position: fixed
@@ -97,17 +98,28 @@ textarea
         width: 70%
     +media(1100)
         width: 50%
-.formContacts
-    .crossForm
+.repairOrder
+    cursor: pointer
+    transition: .5s ease all
+    &:hover
+        transform: scale(1.1)
+.repairOrderRecentBgBg
+    display: block
+.formContacts,
+.orderPopap
+    .crossForm,
+    .crossOrder
         position: absolute
         cursor: pointer
-        top: 40rem
+        top: 20rem
         right: 30rem
         width: 40rem
         height: 40rem
         &::before
             content: ''
             position: absolute
+            top: 50%
+            left: 0
             width: 40rem
             height: 3rem
             background: #000
@@ -115,12 +127,16 @@ textarea
         &::after
             content: ''
             position: absolute
+            top: 50%
+            left: 0
             width: 40rem
             height: 3rem
             background: #000
             transform: rotate(-45deg)
 
-.bgAbsolute
+.bgAbsolute,
+.bgAbsoluteOrder
+    cursor: pointer
     display: none
     position: fixed
     top: 0
@@ -129,7 +145,6 @@ textarea
     width: 100%
     height: 100%
     z-index: 2
-
 .feedbackBlock
     display: block
 // Header-info
@@ -683,33 +698,34 @@ main
 
 
 .cards-block
-    display: grid
-    gap: 20rem
-    // flex-wrap: wrap
-    // row-gap: 30rem
-    // justify-content: center
-    // +media(1370)
-    //     justify-content: space-between
-    grid-template-columns: 100%
-    +media(500)
-        grid-template-columns: calc( 50% - 20rem ) calc( 50% - 20rem )
-    +media(860)
-        grid-template-columns: calc( 33.33% - 20rem ) calc( 33.33% - 20rem ) calc( 33.33% - 20rem )
+    // display: grid
+    // gap: 20rem
+    flex-wrap: wrap
+    row-gap: 30rem
+    justify-content: center
+    +media(1370)
+        justify-content: space-between
+    // grid-template-columns: 100%
+    // +media(500)
+    //     grid-template-columns: calc( 50% - 20rem ) calc( 50% - 20rem )
+    // +media(860)
+    //     grid-template-columns: calc( 33.33% - 20rem ) calc( 33.33% - 20rem ) calc( 33.33% - 20rem )
 
-    +media(1300)
-        grid-template-columns: calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem )
+    // +media(1300)
+    //     grid-template-columns: calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem )
 
 .card
     position: relative
     height: 100%
-    width: 100%
+    max-width: 315rem
     padding: 20rem
     box-sizing: border-box
     border-radius: 9rem
     min-height: 400rem
     box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
+    transition: .5s ease all
     +media(1370)
-        min-width: 305rem
+        max-width: 305rem
         min-height: auto
 
     img
@@ -1001,7 +1017,7 @@ footer
         height: 100%
         width: 100%
 
-.mapContact
+// .mapContact
 
 
 
@@ -1208,7 +1224,8 @@ footer
             background: url(../img/tel.svg) no-repeat center / cover
         &:nth-child(4)
             background: url(../img/viber.svg) no-repeat center / cover
-.formContacts
+.formContacts,
+.formContactsAbsolute1
     background: #F2F1EE
     padding: 40rem 30rem
     box-sizing: border-box
@@ -1269,7 +1286,59 @@ footer
         line-height: 24rem
         background: #F9B50A
         color: #fff
+        transition: .5s ease all
+        cursor: pointer
+        &:hover
+            transform: scale(1.1)
+.orderPopap
+    // display: none
+    input
+        width: auto
+    .flex
+        width: 100%
+        margin-bottom: 20rem
+        &>div
+            margin: 0
+            width: 50%
+        label
+            margin: 0
+    .w100
+        width: 100%
+.radioBlock
+    column-gap: 20rem
+    input
+        cursor: pointer
+        display: none
+        &:checked + label::after
+            content: ''
+            position: absolute
+            left: 3rem
+            top: 50%
+            width: 10rem
+            height: 10rem
+            box-sizing: border-box
+            border-radius: 50%
+            border: 1px solid #000
+            background: #000
+            transform: translate(0, -50%)
+    label
+        cursor: pointer
+        position: relative
+        padding-left: 25rem
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 50%
+            width: 16rem
+            height: 16rem
+            box-sizing: border-box
+            border-radius: 50%
+            border: 1px solid #000
+            transform: translate(0, -50%)
+            
 .checkboxLabel
+    cursor: pointer
     position: relative
     padding-left: 25rem !important
     margin: 0
@@ -1294,6 +1363,7 @@ footer
         border: 1rem solid #000
 
 .checkbox
+    cursor: pointer
     display: none
     &:checked + label::after
         content: ""
@@ -1323,27 +1393,29 @@ footer
     //     width: 100%
     img
         width: 160rem
-        margin-right: 20rem
         +media(380)
             width: 190rem
     h2
-        text-align: center
-        margin-bottom: 0
-        color: #222
-        font-weight: 600
-        font-size: 16rem
-        line-height: 20rem
+        a
+            text-align: center
+            margin-bottom: 0
+            color: #222
+            font-weight: 600
+            font-size: 16rem
+            line-height: 20rem
+            text-decoration: none
         +media(390)
             text-align: left
             max-width: 405rem
     span
         position: relative
         display: block
-        margin-left: 20rem
         width: 40rem
         height: 40rem
         background: #F9B50A
         border-radius: 50%
+        +media(390)
+            margin-left: 20rem
         &::before,
         &::after
             content: ""
@@ -1364,6 +1436,7 @@ footer
     width: 100%
     justify-content: center
     row-gap: normal
+    margin-left: 20rem
     +media(390)
         justify-content: start
         row-gap: 20rem
@@ -1387,13 +1460,16 @@ footer
 
 .basketCardCount
     margin-bottom: 20rem
+    justify-content: space-between
     +media(390)
         margin-bottom: 0
+        width: 50%
     b
         color: #222
         margin-right: 20rem
         font-weight: 600
         font-size: 12rem
+
 .flexButton
     display: flex
     align-items: center
@@ -1405,7 +1481,7 @@ footer
         border: none
         background: #D9D9D9
         font-size: 20rem
-        width: 25rem
+        width: 25rem !important
         padding: 0
         &:nth-child(1)
             border-radius: 4rem 0 0 4rem
@@ -1440,7 +1516,6 @@ footer
             font-weight: 700
             font-size: 36rem
         button
-            max-width: 315rem
             width: 100%
             border-radius: 9rem
             color: #fff
@@ -1449,6 +1524,8 @@ footer
             font-size: 20rem
             border: none
             background: #F9B50A
+            +media(415)
+                max-width: 315rem
         a
             text-align: center
             font-weight: 600
@@ -1462,16 +1539,28 @@ footer
             padding: 17rem 20rem
             +media(415)
                 max-width: 315rem
-
+.w100
+    width: 100%
+    position: relative
+    +media(500)
+        position: static
 .catalog
     align-items: start
+    flex-wrap: wrap
+    +media(500)
+        flex-wrap: nowrap
     &>div>p
         margin: 0
         padding: 5rem 9rem
         color: #222
         font-weight: 600
         font-size: 24rem
+        box-sizing: border-box
         background: #F9B50A
+        width: 100%
+        text-align: center
+        +media(500)
+            text-align: left
 
     form
         min-width: 315rem
@@ -1479,32 +1568,56 @@ footer
         padding: 17rem 9rem 30rem
         box-sizing: border-box
         background: #F2F1EE
-        li
-            position: relative
-            border-bottom: 1rem solid #D9D9D9
-            margin-bottom: 10rem
-            &::before
-                content: ''
-                position: absolute
-                right: 0
-                top: 50%
-                width: 8rem
-                height: 8rem
-                border: 2rem solid #222
-                border-top: none
-                border-left: none
-                transform: translate(-50%, -50%) rotate(45deg)
-        li
-            padding: 7rem 0
-            color: #222
-            font-weight: 400
-            font-size: 16rem
+        // display: none
+        // +media(500)
+        //     display: block
+        
         label
             color: #222
             font-weight: 400
             font-size: 16rem
-
-
+.mainMenu
+    &>li
+        position: relative
+        border-bottom: 1rem solid #D9D9D9
+        margin-bottom: 10rem
+        width: 100%
+    h3
+        margin: 0
+        font-weight: 400
+    span
+        cursor: pointer
+        position: absolute
+        display: block
+        top: 50%
+        right: 0
+        width: 8rem
+        height: 8rem
+        border: 2rem solid #222
+        border-top: none
+        border-left: none
+        transform: translate(-50%, -50%) rotate(45deg)
+        z-index: 5
+    &>li
+        padding: 0 0 7rem 0
+        color: #222
+        font-weight: 400
+        font-size: 16rem
+    .flex-between
+        margin: 0
+        position: relative
+.catalogSubMenu
+    display: none
+    li
+        padding: 0 20rem
+    h4
+        font-weight: 400
+.clickForm
+    position: absolute
+    display: block
+    z-index: 4
+    +media(500)
+        position: static
 .checboxBlock
     div
         margin-top: 10rem
@@ -1585,26 +1698,30 @@ footer
         border: 1rem solid #D9D9D9            
 
 .sliderImage 
+    div
+        position: relative
+        width: 80%
     img
+        position: absolute
         width: 110rem
         border: 1rem solid #D9D9D9
-        &:nth-child(2)
-            display: none
-            +media(400)
-                display: block
-            +media(500)
-                display: none
-            +media(1300)
-                display: block
-        &:nth-child(3)
-            display: block
-            +media(500)
-                display: none
-            +media(800)
-                display: block
+        // &:nth-child(2)
+        //     display: none
+        //     +media(400)
+        //         display: block
+        //     +media(500)
+        //         display: none
+        //     +media(1300)
+        //         display: block
+        // &:nth-child(3)
+        //     display: block
+        //     +media(500)
+        //         display: none
+        //     +media(800)
+        //         display: block
     span
         position: relative
-        display: block
+        // display: block
         width: 40rem
         height: 40rem
         background: #F9B50A
@@ -1765,12 +1882,14 @@ footer
     img
         width: 600rem
 .but
-    max-width: 315rem
     width: 100%
     background: #F2F1EE
     border-radius: 9rem
     text-align: center
+    box-sizing: border-box
     padding: 20rem
+    +media(1480)
+        max-width: 315rem
     a
         font-weight: 600
         font-size: 20rem
@@ -1805,11 +1924,11 @@ footer
             margin: 0
 .mainContent
     flex-wrap: wrap
-    +media(800)
+    +media(1480)
         flex-wrap: nowrap
     .but
         margin: 0 auto
-        +media(800)
+        +media(1480)
             margin: 0
 .CenterImageWrap
     margin: 0 auto
@@ -1967,5 +2086,11 @@ footer
         width: 50%
 .privacyPolicyBlock,
 .privacyPolicyBlockContacts,
-.subMenuBlock
+.repairOrderRecentBgBg,
+.subMenuBlock,
+.orderPopapBlock,
+.catalogSubBlock
     display: block !important
+
+.arrowRotate
+    transform: rotate(-45deg) translate(-50%, -50%)!important
