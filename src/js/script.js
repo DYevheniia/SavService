@@ -54,16 +54,27 @@ policyArr.forEach(policy => {
 
 const policyFooter = document.querySelectorAll(".policyFooter"),
     privacyPolicyFooter = document.querySelectorAll(".privacyPolicyFooter"),
-    crossPolicyFooter = document.querySelectorAll(".crossPolicyFooter")
+    crossPolicyFooter = document.querySelectorAll(".crossPolicyFooter"),
+    bgAbsoluteFooter = document.querySelectorAll(".bgAbsoluteFooter")
 
 policyFooter.forEach(footer => {
     privacyPolicyFooter.forEach(PolicyFooter => {
-        footer.addEventListener("click", function (e) {
-            e.preventDefault()
-            PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
-        })
-        crossPolicyFooter.forEach(footerCroos => {
-            PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+        bgAbsoluteFooter.forEach(bg => {
+            footer.addEventListener("click", function (e) {
+                e.preventDefault()
+                PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+                bg.classList.toggle("bgAbsoluteFooterBlock")
+            })
+            crossPolicyFooter.forEach(footerCroos => {
+                footerCroos.addEventListener("click", () => {
+                    bg.classList.toggle("bgAbsoluteFooterBlock")
+                    PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+                })
+            })
+            bg.addEventListener("click", () => {
+                bg.classList.toggle("bgAbsoluteFooterBlock")
+                PolicyFooter.classList.toggle("privacyPolicyBlockFooter")
+            })
         })
     })
 })
@@ -123,7 +134,7 @@ const headerMenu = document.querySelectorAll("#headerMenu"),
     sparePartsMenu = document.querySelectorAll(".sparePartsMenu"),
     arrowArr = document.querySelectorAll(".arrow"),
     colorA = document.querySelectorAll(".colorA")
-
+console.log(page);
 if (page == "/index.html" || page == "/") { 
     headerMenu.forEach(menu => {
         headerSubMenu.forEach(subMenu => {
@@ -309,8 +320,6 @@ crossOrder.forEach(cross => {
     })
 })
 
-// слайдер картинок товару
-
 
 // клік на заголовок фільтру відкривається фільтер на весь екран
 
@@ -343,4 +352,29 @@ document.querySelectorAll(".mainMenu > li").forEach(mainLi => {
         });
     }
 });
+
+
+
+// слайдер картинок товару
+
+
+
+
+
+if (page == "/goods.html") {
+    const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width,
+        sliderImage = document.querySelectorAll(".slider-container img")
+    window.addEventListener("load", function () {
+        const slider = new InfinitySlider(".slider", {
+            gap: 20,                                
+            isArrows: true,                    
+            baseCardWidth: 120 
+        });
+        
+        slider.init();
+        window.onresize = function () {
+            slider.init();
+        };
+    })
+}
 

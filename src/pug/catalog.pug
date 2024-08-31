@@ -19,12 +19,16 @@ html(lang="en")
                 include components/formContacts
         main
             .recent-bg-bg
-            .wrapper
+            .wrapper.flex-between.wrap500
                 .pageNavigation.flex
                     p
                         a(href="index.html") головна
                     p каталог
-            .flex-between.catalog.wrapper
+                .sort.flex 
+                    p сортувати
+                    select(name="") 
+                        option(value="") найпопулярніші
+            .catalog.wrapper.flex
                 .w100
                     p Фільтр
                     form(action="").clickForm
@@ -202,7 +206,7 @@ html(lang="en")
                             div 
                                 input(type="checkbox", name="", class="checkbox" id="substitute")
                                 label(for="substitute" class="checkboxLabel") Замінник
-                .cards-block.flex-between
+                .cards-block-catalog-grid.flex-between
                     include components/card.pug
                     include components/card.pug
                     include components/card.pug

@@ -1,7 +1,7 @@
 @import components/mixin
 
 html
-    font-size: 0.6px
+    font-size: 0.65px
     +media(635)
         font-size: 0.8px
     +media(1000)
@@ -76,8 +76,7 @@ textarea
         width: 100%
         &>div
             justify-content: space-between
-            &>div
-                width: 50%
+            
 
 .wrapReverse
     flex-wrap: wrap-reverse
@@ -135,7 +134,8 @@ textarea
             transform: rotate(-45deg)
 
 .bgAbsolute,
-.bgAbsoluteOrder
+.bgAbsoluteOrder,
+.bgAbsoluteFooter
     cursor: pointer
     display: none
     position: fixed
@@ -380,6 +380,9 @@ ul.sparePartsMenuClick
                 z-index: 1
 .posRelative
     position: relative
+    margin-bottom: 20rem
+    +media(390)
+        margin: 0
 .searchBlockWrap
     position: absolute
     background: #fff
@@ -663,7 +666,7 @@ main
 
 
 .popular
-    padding: 96rem 0 45rem
+    padding: 96rem 20rem 45rem
     background: #FFFFFA
     h2
         margin: 0
@@ -695,38 +698,58 @@ main
             border-top: none
             border-left: none
             transform: rotate(-45deg) translate(0, -50%)
-
-
-.cards-block
-    // display: grid
-    // gap: 20rem
-    flex-wrap: wrap
+.cards-block-catalog-grid
+    width: 100%
+    display: grid
+    gap: 20rem
     row-gap: 30rem
-    justify-content: center
-    +media(1370)
-        justify-content: space-between
-    // grid-template-columns: 100%
-    // +media(500)
-    //     grid-template-columns: calc( 50% - 20rem ) calc( 50% - 20rem )
-    // +media(860)
-    //     grid-template-columns: calc( 33.33% - 20rem ) calc( 33.33% - 20rem ) calc( 33.33% - 20rem )
+    grid-template-rows: auto
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+    +media(400)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    +media(800)
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    // +media(634)
+    //     grid-template-columns: repeat(2, minmax(0, 1fr))
+    // +media(800)
+    //     grid-template-columns: repeat(3, minmax(0, 1fr))
 
-    // +media(1300)
-    //     grid-template-columns: calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem ) calc( 25% - 20rem )
+.cards-block-grid
+    display: grid
+    gap: 20rem
+    row-gap: 30rem
+    grid-template-rows: auto
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+    +media(400)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    +media(700)
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    +media(634)
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    +media(800)
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    +media(1000)
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+        
 
+
+
+.wrap500
+    align-items: center
+    flex-wrap: wrap
+    +media(500)
+        flex-wrap: nowrap
 .card
     position: relative
     height: 100%
-    max-width: 315rem
     padding: 20rem
     box-sizing: border-box
     border-radius: 9rem
-    min-height: 400rem
     box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
     transition: .5s ease all
-    +media(1370)
-        max-width: 305rem
-        min-height: auto
+    width: 100%
+    
+
 
     img
         width: 100%
@@ -735,23 +758,36 @@ main
     .cardArticle
         margin: 15rem 0 7rem 0
         font-weight: 500
-        font-size: 14rem
+        font-size: 24rem
         color: #222
+        +media(500)
+            font-size: 18rem
+        +media(1000)
+            font-size: 14rem
     h3
         margin: 0 0 8rem 0
         font-weight: 600
-        font-size: 16rem
+        font-size: 28rem
         color:#222
         +media(500)
+            font-size: 22rem
             min-height: 30rem
+        +media(1000)
+            font-size: 16rem
     a.button
         display: inline-block
         cursor: pointer
         width: 100%
         text-align: center
         z-index: 1
+        font-size: 28rem
+        padding: 15rem
         &:hover
             color: #fff
+        +media(500)
+            font-size: 22rem
+        +media(1000)
+            font-size: 14rem
     &:hover
         transform: scale(1.04)
 
@@ -760,11 +796,15 @@ main
     top: 0
     left: 20rem
     background: #222
-    font-size: 16rem
+    font-size: 24rem
     font-weight: 600
     color: #fff
     padding: 4rem 8rem
     border-radius: 9rem
+    +media(500)
+        font-size: 18rem
+    +media(1000)
+        font-size: 16rem
 .absolute
     position: absolute
     top: 0
@@ -777,9 +817,12 @@ main
 .cardPrice
     margin: 0 0 10rem 0
     font-weight: 600
-    font-size: 20rem
+    font-size: 28rem
     color: #222
-
+    +media(500)
+        font-size: 22rem
+    +media(1000)
+        font-size: 14rem
 
 // aboutSavServis
 
@@ -831,13 +874,17 @@ main
         margin: 0
         margin-bottom: 20rem
         font-weight: 700
-        font-size: 24rem
+        font-size: 32rem
         line-height: 29rem
+        +media(1000)
+            font-size: 24rem
     p
         margin: 0
         font-weight: 500
-        font-size: 14rem
-        line-height: 17rem
+        font-size: 20rem
+        line-height: 23rem
+        +media(1000)
+            font-size: 14rem
 p.firstP
     margin-bottom: 15rem
 .assortment-image
@@ -878,6 +925,8 @@ p.firstP
     flex-wrap: wrap
     justify-content: center
     align-items: flex-start
+    row-gap: 50rem
+
     +media(870)
         flex-wrap: nowrap
         align-items: center
@@ -916,7 +965,7 @@ p.firstP
         p
             margin: 0 auto
             font-weight: 500
-            font-size: 24rem
+            font-size: 25rem
             line-height: 29rem
             text-align: center
             max-width: 230rem
@@ -926,6 +975,8 @@ p.firstP
             +media(870)
                 min-height: 80rem
                 height: 100%
+            +media(1000)
+                font-size: 24rem
 .advantages-image
     width: 248rem
     height: 200rem
@@ -940,22 +991,28 @@ footer
     h2
         color: #fff
         font-weight: 700
-        font-size: 40rem
+        font-size: 41rem
         text-align: center
         +media(500)
             text-align-last: left
+        +media(100)
+            font-size: 40rem
     h3
         margin: 0 0 20rem 0
         color: #fff
         font-weight: 600
-        font-size: 20rem
+        font-size: 21rem
+        +media(1000)
+            font-size: 20rem
     p,a,address
         transition: .5s ease all
         text-decoration: none
         margin: 0
         color: #fff
         font-weight: 400
-        font-size: 16rem
+        font-size: 17rem
+        +media(1000)
+            font-size: 16rem
 .footerWrap
     flex-wrap: wrap
     // justify-content: center
@@ -1190,6 +1247,10 @@ footer
         font-weight: 400
         font-size: 16rem
         line-height: 20rem
+        +media(375)
+            font-size: 18rem
+        +media(425)
+            font-size: 20rem
     .address
         margin-bottom: 30rem
     iframe
@@ -1272,6 +1333,7 @@ footer
     .flex
         flex-direction: row
         margin-bottom: 40rem
+        
 
     .contactButton
         display: block
@@ -1304,6 +1366,23 @@ footer
             margin: 0
     .w100
         width: 100%
+        
+.sort
+    p
+        font-weight: 500
+        font-size: 14rem
+        color: #1e1e1e
+        margin-right: 50rem
+    select
+        outline: none
+        appearance: none
+        -webkit-appearance: none
+        background: #fff
+        color: #222
+        border: 1rem solid #d9d9d9
+        border-radius: 4rem
+        padding: 7rem 8rem
+
 .radioBlock
     column-gap: 20rem
     input
@@ -1392,16 +1471,18 @@ footer
     // &>div
     //     width: 100%
     img
-        width: 160rem
+        max-width: 160rem
+        width: 100%
         +media(380)
-            width: 190rem
+            max-width: 190rem
     h2
         a
             text-align: center
             margin-bottom: 0
             color: #222
             font-weight: 600
-            font-size: 16rem
+            // font-size: 16rem
+            font-size: 20rem
             line-height: 20rem
             text-decoration: none
         +media(390)
@@ -1480,8 +1561,9 @@ footer
     button
         border: none
         background: #D9D9D9
-        font-size: 20rem
-        width: 25rem !important
+        // font-size: 20rem
+        font-size: 23rem
+        width: 35rem !important
         padding: 0
         &:nth-child(1)
             border-radius: 4rem 0 0 4rem
@@ -1491,7 +1573,8 @@ footer
         color: #222
         margin: 0 10rem
         font-weight: 600
-        font-size: 14rem
+        // font-size: 14rem
+        font-size: 20rem
         min-width: auto
 .basketCardPrice
     p
@@ -1542,13 +1625,16 @@ footer
 .w100
     width: 100%
     position: relative
-    +media(500)
+    +media(800)
         position: static
+        max-width: 315rem
 .catalog
     align-items: start
     flex-wrap: wrap
-    +media(500)
+    +media(800)
         flex-wrap: nowrap
+        row-gap: 20rem
+        column-gap: 20rem
     &>div>p
         margin: 0
         padding: 5rem 9rem
@@ -1559,8 +1645,10 @@ footer
         background: #F9B50A
         width: 100%
         text-align: center
-        +media(500)
+        margin-bottom: 30rem
+        +media(800)
             text-align: left
+            margin: 0
 
     form
         min-width: 315rem
@@ -1568,9 +1656,9 @@ footer
         padding: 17rem 9rem 30rem
         box-sizing: border-box
         background: #F2F1EE
-        // display: none
-        // +media(500)
-        //     display: block
+        display: none
+        +media(800)
+            display: block
         
         label
             color: #222
@@ -1645,9 +1733,10 @@ footer
         border: 2rem solid #222
         transform: rotate(-45deg)
     li
-        font-size: 14rem
+        // font-size: 14rem
+        font-size: 26rem
         &+li
-            margin-left: 8rem
+            margin-left: 20rem
         &:first-child
             span
                 border-bottom: none
@@ -1699,12 +1788,12 @@ footer
 
 .sliderImage 
     div
-        position: relative
-        width: 80%
+        width: 100%
     img
         position: absolute
         width: 110rem
         border: 1rem solid #D9D9D9
+        box-sizing: border-box
         // &:nth-child(2)
         //     display: none
         //     +media(400)
@@ -1719,7 +1808,8 @@ footer
         //         display: none
         //     +media(800)
         //         display: block
-    span
+    .left.slider_navigation,
+    .right.slider_navigation 
         position: relative
         // display: block
         width: 40rem
@@ -2027,29 +2117,33 @@ footer
 
 
 .privacyPolicy,
-.privacyPolicyContacts
+.privacyPolicyContacts,
+.privacyPolicyFooter
     position: absolute
     background: #fff
     display: none
     box-sizing: border-box
     top: 0
     left: 50%
-    padding: 40rem 0
+    padding: 50rem 0 40rem
     width: 100%
     height: 100%
     transform: translate(-50%, 0)
     .crossPolicy,
-    .crossPolicyContacts
+    .crossPolicyContacts,
+    .crossPolicyFooter
         position: absolute
         cursor: pointer
         width: 40rem
         height: 40rem
-        right: 20rem
-        top: 30rem
+        right: 10rem
+        top: 8rem
         z-index: 20
         &::before
             content: ''
             position: absolute
+            top: 50%
+            right: 0
             width: 40rem
             height: 3rem
             background: #000
@@ -2057,6 +2151,8 @@ footer
         &::after
             content: ''
             position: absolute
+            top: 50%
+            right: 0
             width: 40rem
             height: 3rem
             background: #000
@@ -2068,8 +2164,8 @@ footer
         height: 100%
         overflow-y: scroll
         font-size: 14rem
-.privacyPolicyContacts
-    display: none
+.privacyPolicyContacts,
+.privacyPolicyFooter
     display: none
     width: 90%
     height: 80%
@@ -2078,18 +2174,23 @@ footer
     left: 50%
     z-index: 3
     transform: translate(-50%, -50%)
+    p
+        color: #222
     +media(500)
         width: 80%
     +media(900)
         width: 70%
     +media(1100)
         width: 50%
+.privacyPolicyBlockFooter
+    display: block
 .privacyPolicyBlock,
 .privacyPolicyBlockContacts,
 .repairOrderRecentBgBg,
 .subMenuBlock,
 .orderPopapBlock,
-.catalogSubBlock
+.catalogSubBlock,
+.bgAbsoluteFooterBlock
     display: block !important
 
 .arrowRotate

@@ -19,7 +19,8 @@ html(lang="en")
                 include components/formContacts
         main 
             .recent-bg-bg
-            .wrapper
+            .wrapper.flex-between 
+
                 .pageNavigation.flex
                     p
                         a(href="index.html") головна
@@ -28,18 +29,18 @@ html(lang="en")
                     p 
                         a(href="") ходова частина
                     p втулка моста 
+               
             .cardInfo.wrapper.flex-between
                 div 
                     .bigImage 
                         img(src="img/card-image.png", alt="")
                     .sliderImage.flex-between
-                        span 
-                        .slider-container
-                            img(src="img/card-image.png", alt="").slider
-                            img(src="img/card-image.png", alt="").slider
-                            img(src="img/card-image.png", alt="").slider
-                            img(src="img/card-image.png", alt="").slider
-                        span
+                        .slider#slider.flex-between
+                            .slider-container
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/card-image.png", alt="")
                 .cardInfoText
                     p Під замовлення
                     h1 Втулка моста внутрішня для телескопічного навантажувача 448/26402 для JCB

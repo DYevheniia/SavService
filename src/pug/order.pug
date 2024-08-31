@@ -26,75 +26,76 @@ html(lang="en")
                     p   
                         a(href="catalog.html") кошик
                     p оформлення замовлення
-            form(action="").flex-between.order.align
-                .wrapper
-                    .data
-                        h2 Ваші  дані
-                        .flex-between
+            .wrapper
+                form(action="").flex-between.order.align
+                    div
+                        .data
+                            h2 Ваші  дані
+                            .flex-between
+                                div 
+                                    label(for="") Імʼя*
+                                    input(type="text" required placeholder="Імʼя").yourName
+                                div 
+                                    label(for="") Прізвище*
+                                    input(type="text" required placeholder="Прізвище").yourName
+                            .flex-between
+                                div 
+                                    label(for="") Телефон*
+                                    input(type="text" required placeholder="+380").yourNumber
+                                div 
+                                    label(for="") E-mail
+                                    input(type="email" required placeholder="E-mail")
+                        .flex-between.align.delivery
+                            div
+                                h2 Спосіб доставки
+                                div 
+                                    input(type="radio" required name="delivery" class="checkbox" id="novaPoshta")
+                                    label(for="novaPoshta" class="checkboxLabel") Нова Пошта
+                                div 
+                                    input(type="radio" required name="delivery" class="checkbox" id="ukrPoshta")
+                                    label(for="ukrPoshta" class="checkboxLabel") Укрпошта
+                                div 
+                                    input(type="radio" required name="delivery" class="checkbox" id="Meestexpres")
+                                    label(for="Meestexpres" class="checkboxLabel") Meestexpres
+                                div 
+                                    input(type="radio" required name="delivery" class="checkbox" id="curerNovaPoshta")
+                                    label(for="curerNovaPoshta" class="checkboxLabel") Курʼєром Нова Пошта
+                                div 
+                                    input(type="radio" required name="delivery" class="checkbox" id="pickup")
+                                    label(for="pickup" class="checkboxLabel") Самовивіз з магазину
                             div 
-                                label(for="") Імʼя*
-                                input(type="text" required placeholder="Імʼя").yourName
-                            div 
-                                label(for="") Прізвище*
-                                input(type="text" required placeholder="Прізвище").yourName
-                        .flex-between
-                            div 
-                                label(for="") Телефон*
-                                input(type="text" required placeholder="+380").yourNumber
-                            div 
-                                label(for="") E-mail
-                                input(type="email" required placeholder="E-mail")
-                    .flex-between.align.delivery
-                        div
-                            h2 Спосіб доставки
-                            div 
-                                input(type="radio" required name="delivery" class="checkbox" id="novaPoshta")
-                                label(for="novaPoshta" class="checkboxLabel") Нова Пошта
-                            div 
-                                input(type="radio" required name="delivery" class="checkbox" id="ukrPoshta")
-                                label(for="ukrPoshta" class="checkboxLabel") Укрпошта
-                            div 
-                                input(type="radio" required name="delivery" class="checkbox" id="Meestexpres")
-                                label(for="Meestexpres" class="checkboxLabel") Meestexpres
-                            div 
-                                input(type="radio" required name="delivery" class="checkbox" id="curerNovaPoshta")
-                                label(for="curerNovaPoshta" class="checkboxLabel") Курʼєром Нова Пошта
-                            div 
-                                input(type="radio" required name="delivery" class="checkbox" id="pickup")
-                                label(for="pickup" class="checkboxLabel") Самовивіз з магазину
+                                h2 Спосіб оплати
+                                div 
+                                    input(type="radio" required name="payment" class="checkbox" id="BankTransfer")
+                                    label(for="BankTransfer" class="checkboxLabel") Банківський переказ
+                                div 
+                                    input(type="radio" required name="payment" class="checkbox" id="ligPay")
+                                    label(for="ligPay" class="checkboxLabel") LigPay
+                                div 
+                                    input(type="radio" required name="payment" class="checkbox" id="cash")
+                                    label(for="cash" class="checkboxLabel") готівкою при отриманні
                         div 
-                            h2 Спосіб оплати
+                            h2 Адреса доставки
+                            .flex-between.addressInput
+                                div 
+                                    label(for="" ) Область*
+                                    input(type="text" required placeholder="Область")
+                                div 
+                                    label(for="") Місто*
+                                    input(type="text" required placeholder="Місто")
                             div 
-                                input(type="radio" required name="payment" class="checkbox" id="BankTransfer")
-                                label(for="BankTransfer" class="checkboxLabel") Банківський переказ
-                            div 
-                                input(type="radio" required name="payment" class="checkbox" id="ligPay")
-                                label(for="ligPay" class="checkboxLabel") LigPay
-                            div 
-                                input(type="radio" required name="payment" class="checkbox" id="cash")
-                                label(for="cash" class="checkboxLabel") готівкою при отриманні
-                    div 
-                        h2 Адреса доставки
-                        .flex-between.addressInput
-                            div 
-                                label(for="" ) Область*
-                                input(type="text" required placeholder="Область")
-                            div 
-                                label(for="") Місто*
-                                input(type="text" required placeholder="Місто")
-                        div 
-                            label(for="") Адреса*
-                            input(type="text" required placeholder="Адреса")
-                .yourOrder
-                    h1 Ваше замовлення
-                    .flex-between   
-                        p 3 товари у кошику на суму:
-                        p 1731 грн
-                    .flex-between 
-                        p До оплати:
-                        p 1731 грн
-                    p Доставку сплачує покупець за тарифами транспортної компанії.
-                    hr
-                    button Підтвердити
+                                label(for="") Адреса*
+                                input(type="text" required placeholder="Адреса")
+                    .yourOrder
+                        h1 Ваше замовлення
+                        .flex-between   
+                            p 3 товари у кошику на суму:
+                            p 1731 грн
+                        .flex-between 
+                            p До оплати:
+                            p 1731 грн
+                        p Доставку сплачує покупець за тарифами транспортної компанії.
+                        hr
+                        button Підтвердити
         include components/footer
         script(src="js/script.js") 
