@@ -81,10 +81,10 @@ policyFooter.forEach(footer => {
 
 // Відкриття політики конфідеційності в попапі на сторінці контакти
 
-if (page == "/SavService/contacts.html") {
-    const policyArrContacts = document.querySelectorAll(".policyContacts"),
-        privacyPolicyBlockContacts = document.querySelectorAll(".privacyPolicyContacts"),
-        crossPolicyContacts = document.querySelectorAll(".crossPolicyContacts")
+const policyArrContacts = document.querySelectorAll(".policyContacts"),
+    privacyPolicyBlockContacts = document.querySelectorAll(".privacyPolicyContacts"),
+    crossPolicyContacts = document.querySelectorAll(".crossPolicyContacts")
+if (policyArrContacts) {
     
     policyArrContacts.forEach(policy => {
         privacyPolicyBlockContacts.forEach(privacy => {
@@ -134,8 +134,7 @@ const headerMenu = document.querySelectorAll("#headerMenu"),
     sparePartsMenu = document.querySelectorAll(".sparePartsMenu"),
     arrowArr = document.querySelectorAll(".arrow"),
     colorA = document.querySelectorAll(".colorA")
-console.log(page);
-if (page == "/SavService/index.html" || page == "/SavService/") { 
+if (recentBg) { 
     headerMenu.forEach(menu => {
         headerSubMenu.forEach(subMenu => {
             menu.addEventListener("click", function () {
@@ -225,7 +224,7 @@ arrowArr.forEach(arrow => {
 
 const excavator = [...document.querySelectorAll(".excavator")]
 
-if (page == "/SavService/index.html" || page == "/SavService/") {
+if (excavator) {
         let excavatorI = 0
     animateElement()
     setInterval(() => {
@@ -360,10 +359,10 @@ document.querySelectorAll(".mainMenu > li").forEach(mainLi => {
 
 
 
+const sliderImage = document.querySelectorAll(".slider-container img")
 
-if (page == "/SavService/goods.html") {
-    const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width,
-        sliderImage = document.querySelectorAll(".slider-container img")
+if (sliderImage) {
+    const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width
     window.addEventListener("load", function () {
         const slider = new InfinitySlider(".slider", {
             gap: 20,                                
