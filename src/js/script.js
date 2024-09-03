@@ -1,5 +1,3 @@
-const page = window.location.pathname //визначити на якій сторінці зараз находимось
-
 // Клік на кнопку зворотній звʼязок, поява попапу та заднього фону
 
 const feedback = document.querySelectorAll(".feedback"),
@@ -148,6 +146,31 @@ if (recentBg) {
                 
                 recentBg.classList.toggle("recent-bg-click")
             })
+            color.forEach(burger => {
+                burger.addEventListener("click", function () {
+                    console.log("dej");
+                    subMenu.classList.toggle("subMenuBlock")
+                    for (i = 0; i < color.length; i++) {
+                        color[i].classList.toggle("colorFocus")
+                    }
+                    for (i = 0; i < colorA.length; i++) {
+                        colorA[i].classList.toggle("colorFocusA")
+                    }
+                    
+                    recentBg.classList.toggle("recent-bg-click")
+                })
+            })
+            menu.addEventListener("click", function () {
+                subMenu.classList.toggle("subMenuBlock")
+                for (i = 0; i < color.length; i++) {
+                    color[i].classList.toggle("colorFocus")
+                }
+                for (i = 0; i < colorA.length; i++) {
+                    colorA[i].classList.toggle("colorFocusA")
+                }
+                
+                recentBg.classList.toggle("recent-bg-click")
+            })
             recentBg.addEventListener("click", function () {
                 recentBg.classList.toggle("recent-bg-click")
                 subMenu.classList.toggle("subMenuBlock")
@@ -206,49 +229,18 @@ if (recentBg) {
 
 // Відкриття сабменю при кліку на стрілочку
 
-const absoluteHeight = document.querySelectorAll(".absoluteHeight")
+const arrowHeader = document.querySelectorAll(".arrow")
 
-arrowArr.forEach(arrow => {
-    sparePartsMenu.forEach(spare => {
-        arrow.addEventListener("click", function () {
-            arrow.classList.toggle("arrowBottom")
-            spare.classList.toggle("sparePartsMenuClick")
-            absoluteHeight.forEach(abHeight => {
-                abHeight.classList.toggle("abHeight")
-            })
-        })
+arrowHeader.forEach(arrow => {
+    arrow.addEventListener("click", function () {
+        const sparePartsMenu = arrow.parentElement.nextElementSibling
+        sparePartsMenu.classList.toggle("sparePartsMenuBlock")
     })
 })
 
-// Слайдер на головній сторінці(машини)
-
-const excavator = [...document.querySelectorAll(".excavator")]
-
-if (excavator) {
-        let excavatorI = 0
-    animateElement()
-    setInterval(() => {
-        if (excavatorI == excavator.length-1) {
-            excavatorI = 0
-        } else {
-            excavatorI++
-        }
-        animateElement();
-    }, 2500)
-    
-    function animateElement() {
-        excavator[excavatorI].style.right = "50%"  
-        excavator[excavatorI].style.transform = "translate(50%, -55%)"
-        setTimeout(() => {
-            excavator[excavatorI].style.right = "-100%"  
-            excavator[excavatorI].style.transform = "translate(100%, -85%) scale(0.5)"
-        }, 2400)
-    }
-}
-
 // Регулярка на імʼя, можна вводити лише букви 
-const yourName = document.querySelectorAll(".yourName")
 
+const yourName = document.querySelectorAll(".yourName")
 
 yourName.forEach(nameInput => {
     nameInput.addEventListener('input', function(event) {
@@ -319,61 +311,89 @@ crossOrder.forEach(cross => {
     })
 })
 
-
 // клік на заголовок фільтру відкривається фільтер на весь екран
 
-document.querySelectorAll(".mainMenu > li").forEach(mainLi => {
-    // Select the submenu that is immediately following this menu item
-    const submenu = mainLi.querySelector(".catalogSubMenu");  
-    const arrowSub = mainLi.querySelector("span"); // Assuming the arrow is a span directly inside the li
+const filterButton = document.querySelector(".filterButton"),
+    form = document.querySelector(".clickForm")
 
-    if (arrowSub) {
-        mainLi.addEventListener("click", function (e) {
-            e.preventDefault();
-    
-            // Toggle visibility of the submenu
-            submenu.classList.toggle("catalogSubBlock");
-            arrowSub.classList.toggle("arrowRotate");
-
-            // Optionally close other submenus if you want to ensure only one submenu is open at a time
-            document.querySelectorAll(".catalogSubMenu").forEach(sub => {
-                if (sub !== submenu) {
-                    sub.classList.remove("catalogSubBlock");
-                }
-            });
-
-            // Optionally reset arrow rotation for other items
-            document.querySelectorAll(".mainMenu > li span").forEach(span => {
-                if (span !== arrowSub) {
-                    span.classList.remove("arrowRotate");
-                }
-            });
-        });
-    }
-});
-
-
-
-// слайдер картинок товару
-
-
-
-
-const sliderImage = document.querySelectorAll(".slider-container img")
-
-if (sliderImage) {
-    const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width
-    window.addEventListener("load", function () {
-        const slider = new InfinitySlider(".slider", {
-            gap: 20,                                
-            isArrows: true,                    
-            baseCardWidth: 120 
-        });
-        
-        slider.init();
-        window.onresize = function () {
-            slider.init();
-        };
+if (filterButton) {
+    filterButton.addEventListener("click", function () {
+        form.classList.toggle("formBlock")
+        filterButton.classList.toggle("marginNone")
     })
 }
 
+// Клік по стрілочці у фільтрі
+
+const arrowWrap = document.querySelectorAll(".arrowWrap")
+
+arrowWrap.forEach(arrow => {
+    arrow.addEventListener("click", function () {
+        sub = arrow.parentElement.nextElementSibling
+        sub.classList.toggle("catalogSubBlock")
+        const arrRotate = [...arrow.children]
+        arrRotate[0].classList.toggle("arrowRotate")
+    })
+})
+
+// Клік на більше, якщо checkbox менше 5, більше не показується в іншому випадку +2 та скрол
+
+const checkBlock = [...document.querySelectorAll(".checkBlock")],
+    more = document.querySelectorAll(".more")
+
+for (i = 0; i < checkBlock.length; i++) {
+    if (checkBlock[i].childElementCount <= 5) {
+        more[i].style.display = "none"
+    }
+}
+more.forEach(moreButton => {
+    moreButton.addEventListener("click", () => {
+        moreButton.previousElementSibling.classList.add("moreBlock")
+    })
+})
+
+// слайдер картинок товару
+
+const sliderImage = document.querySelectorAll(".slider-container img")
+
+// if (sliderImage) {
+//     const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width
+//     window.addEventListener("load", function () {
+//         const slider = new InfinitySlider(".slider", {
+//             gap: 20,                                
+//             isArrows: true,                    
+//             baseCardWidth: 120 
+//         });
+        
+//         slider.init();
+//         window.onresize = function () {
+//             slider.init();
+//         };
+//     })
+// }
+
+// Слайдер на головній сторінці(машини)
+
+// const excavator = [...document.querySelectorAll(".excavator")]
+
+// if (excavator) {
+//         let excavatorI = 0
+//     animateElement()
+//     setInterval(() => {
+//         if (excavatorI == excavator.length-1) {
+//             excavatorI = 0
+//         } else {
+//             excavatorI++
+//         }
+//         animateElement();
+//     }, 2500)
+    
+//     function animateElement() {
+//         excavator[excavatorI].style.right = "50%"  
+//         excavator[excavatorI].style.transform = "translate(50%, -55%)"
+//         setTimeout(() => {
+//             excavator[excavatorI].style.right = "-100%"  
+//             excavator[excavatorI].style.transform = "translate(100%, -85%) scale(0.5)"
+//         }, 2400)
+//     }
+// }

@@ -20,26 +20,27 @@ html(lang="en")
         main
             .recent-bg-bg
             .wrapper.flex-between.wrap500
-                .pageNavigation.flex
+                .pageNavigation.flex.p0
                     p
                         a(href="index.html") головна
                     p каталог
                 .sort.flex 
                     p сортувати
-                    select(name="") 
+                    select(name="").select
                         option(value="") найпопулярніші
             .catalog.wrapper.flex
                 .w100
-                    p Фільтр
+                    p.filterButton Фільтр
                     form(action="").clickForm
                         .checboxBlock
                             p Запчастини
                             ul.menu.mainMenu
                                 li
                                     .flex-between
-                                        a(href="").absolute
-                                        h3 Навісне обладнання
-                                        span
+                                        h3 
+                                            a(href="") Навісне обладнання
+                                        .arrowWrap
+                                            span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Ковші
@@ -49,9 +50,10 @@ html(lang="en")
                                             h4 Зуби
                                 li
                                     .flex-between
-                                        a(href="").absolute
-                                        h3 Електросистема
-                                        span
+                                        h3 
+                                            a(href="") Електросистема
+                                        .arrowWrap
+                                            span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Електрообладнання двигуна
@@ -61,9 +63,10 @@ html(lang="en")
                                             h4 Електрообладнання машини
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Гідравлічна система
-                                        span
+                                        h3 
+                                            a(href="") Гідравлічна система
+                                        .arrowWrap
+                                            span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Гідравлічні вузли
@@ -77,9 +80,10 @@ html(lang="en")
                                             h4 Розподільники і клапана
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Ходова система
-                                        span
+                                        h3 
+                                            a(href="") Ходова система
+                                        .arrowWrap
+                                            span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Мости та комплектуючі
@@ -91,14 +95,15 @@ html(lang="en")
                                             h4 Комплектуючі КПП
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Гальмівна система
+                                        h3 
+                                            a(href="") Гальмівна система
                                         //- span
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Двигуни та комплектуючі
-                                        span
+                                        h3 
+                                            a(href="") Двигуни та комплектуючі
+                                        .arrowWrap
+                                            span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Блок та комплектуючі
@@ -120,73 +125,94 @@ html(lang="en")
                                             h4 Система рециркуляції газів
                                 li  
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Фільтри
+                                        h3 
+                                            a(href="") Фільтри
                                         //- span
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Масла
+                                        h3 
+                                            a(href="") Масла
                                         //- span
                                 li
                                     .flex-between 
-                                        a(href="").absolute
-                                        h3 Аксесуари
+                                        h3 
+                                            a(href="") Аксесуари
                                         //- span
                         .checboxBlock
                             p Марка спецтехніки
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="jcb")
-                                label(for="jcb" class="checkboxLabel") JCB
-                            div
-                                input(type="checkbox", name="", class="checkbox" id="johnDeere")
-                                label(for="johnDeere" class="checkboxLabel") John Deere
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="volvo")
-                                label(for="volvo" class="checkboxLabel") Volvo
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="hyundai")
-                                label(for="hyundai" class="checkboxLabel") Hyundai
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="daewoo")
-                                label(for="daewoo" class="checkboxLabel") Daewoo
-                            p більше
+                            .checkBlock
+                                .check
+                                    input(type="checkbox", name="", class="checkbox" id="jcb")
+                                    label(for="jcb" class="checkboxLabel") JCB
+                                .check
+                                    input(type="checkbox", name="", class="checkbox" id="johnDeere")
+                                    label(for="johnDeere" class="checkboxLabel") John Deere
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="volvo")
+                                    label(for="volvo" class="checkboxLabel") Volvo
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="hyundai")
+                                    label(for="hyundai" class="checkboxLabel") Hyundai
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="daewoo")
+                                    label(for="daewoo" class="checkboxLabel") Daewoo
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="hyundai1")
+                                    label(for="hyundai1" class="checkboxLabel") Hyundai1
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="daewoo1")
+                                    label(for="daewoo1" class="checkboxLabel") Daewoo1
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="hyundai")
+                                    label(for="hyundai" class="checkboxLabel") Hyundai
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="daewoo")
+                                    label(for="daewoo" class="checkboxLabel") Daewoo
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="hyundai1")
+                                    label(for="hyundai1" class="checkboxLabel") Hyundai1
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="daewoo1")
+                                    label(for="daewoo1" class="checkboxLabel") Daewoo1
+                            p.more більше
                         .checboxBlock
                             p Бренд
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="arb")
-                                label(for="arb" class="checkboxLabel") ARB
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="arisun")
-                                label(for="arisun" class="checkboxLabel") Arisun
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="azeri")
-                                label(for="azeri" class="checkboxLabel") Azeri
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="bergstrom")
-                                label(for="bergstrom" class="checkboxLabel") Bergstrom
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="centa")
-                                label(for="centa" class="checkboxLabel") Centa
-                            p більше
+                            .checkBlock
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="arb")
+                                    label(for="arb" class="checkboxLabel") ARB
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="arisun")
+                                    label(for="arisun" class="checkboxLabel") Arisun
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="azeri")
+                                    label(for="azeri" class="checkboxLabel") Azeri
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="bergstrom")
+                                    label(for="bergstrom" class="checkboxLabel") Bergstrom
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="centa")
+                                    label(for="centa" class="checkboxLabel") Centa
+                            p.more більше
                         .checboxBlock
                             p Країна виробник
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="es")
-                                label(for="es" class="checkboxLabel") ЄС
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="india")
-                                label(for="india" class="checkboxLabel") Індія
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="italy")
-                                label(for="italy" class="checkboxLabel") Італія
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="england")
-                                label(for="england" class="checkboxLabel") Англія
-                            div 
-                                input(type="checkbox", name="", class="checkbox" id="Germany")
-                                label(for="Germany" class="checkboxLabel") Німеччина
-                            p більше
+                            .checkBlock
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="es")
+                                    label(for="es" class="checkboxLabel") ЄС
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="india")
+                                    label(for="india" class="checkboxLabel") Індія
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="italy")
+                                    label(for="italy" class="checkboxLabel") Італія
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="england")
+                                    label(for="england" class="checkboxLabel") Англія
+                                .check 
+                                    input(type="checkbox", name="", class="checkbox" id="Germany")
+                                    label(for="Germany" class="checkboxLabel") Німеччина
+                            p.more більше
                         .checboxBlock
                             p Наявність
                             div 
@@ -206,19 +232,20 @@ html(lang="en")
                             div 
                                 input(type="checkbox", name="", class="checkbox" id="substitute")
                                 label(for="substitute" class="checkboxLabel") Замінник
-                .cards-block-catalog-grid.flex-between
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
-                    include components/card.pug
+                div
+                    .cards-block-catalog-grid
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
+                        include components/card.pug
                     
                     .page
                         ul.menu.flex

@@ -265,6 +265,7 @@ textarea
                 background: #222
                 transform: translate(0, -50%)
                 transition: .5s ease all
+
 .colorFocus
     background: #F9B50A !important
 .colorFocusA
@@ -286,17 +287,18 @@ div.sub-menu
     li
         position: relative
         border-bottom: 1px solid #9d9d9d
-        padding: 19rem 0
         &+li
             display: flex
             align-items: center
         a
+            display: block
             color: #222
             font-weight: 600
             text-decoration: none
             font-size: 13rem
-            transition: .5s ease all
+            transition: .3s ease all
             width: 100%
+            padding: 19rem 0
             +media(495)
                 font-size: 18rem
         img
@@ -306,27 +308,26 @@ div.sub-menu
                 width: 35rem
             +media(3000)
                 width: 45rem
-        &:first-child
-            span
-                content: ''
-                position: absolute
-                cursor: pointer
-                top: 40rem
-                right: 0
-                width: 15rem
-                height: 15rem
-                box-sizing: border-box
-                border-radius: 2rem
-                border: 2rem solid #F9B50A
-                border-top: none
-                border-left: none
-                transform: rotate(-45deg) translate(0, -50%)
-                transition: .5s ease all
-                z-index: 1
-                &:hover
-                    transform: rotate(45deg) translate(-50%, -50%)
-                +media(640)
-                    top: 25rem
+        span
+            content: ''
+            position: absolute
+            cursor: pointer
+            top: 40rem
+            right: 0
+            width: 15rem
+            height: 15rem
+            box-sizing: border-box
+            border-radius: 2rem
+            border: 2rem solid #F9B50A
+            border-top: none
+            border-left: none
+            transform: rotate(-45deg) translate(0, -50%)
+            transition: .5s ease all
+            z-index: 1
+            &:hover
+                transform: rotate(45deg) translate(-50%, -50%)
+            +media(640)
+                top: 25rem
         &:hover 
             cursor: pointer
             &>div a
@@ -341,15 +342,13 @@ ul.sparePartsMenu
     display: none
     li
         border: none
-        padding: 10rem 10rem 0 42rem
+        a
+            padding: 10rem 10rem 10rem 42rem
+            font-weight: 400
+            font-size: 16rem
         &:hover
             a
                 color: #F9B50A
-        a
-            font-weight: 400
-            font-size: 16rem
-ul.sparePartsMenuClick
-    display: block
 .my-basket
     display: flex
     align-items: center
@@ -363,10 +362,10 @@ ul.sparePartsMenuClick
         &:hover
             transform: scale(1.1)
         &:last-child
+            margin-left: 30rem
             img
                 width: 34rem
                 height: 36rem
-                margin-left: 30rem
            
             &::before
                 content: '0'
@@ -610,11 +609,13 @@ main
     background: #2B2A28
     +media(1260)
         flex-wrap: nowrap
+        &>div
+            padding: 20rem 40rem 20rem 60rem
     &>div
         position: relative
         width: 100%
         box-sizing: border-box
-        padding: 20rem 40rem 20rem 60rem
+        padding: 20rem 40rem 40rem 60rem
         text-align: center
         background: #2B2A28
         height: auto
@@ -622,6 +623,7 @@ main
         display: flex
         justify-content: space-between
         align-items: center
+       
         &>div
             width: 100rem
             +media(360)
@@ -685,6 +687,8 @@ main
         font-weight: 600
         font-size: 24rem
         color: #222
+        &:hover
+            text-decoration: underline #222
         &::before
             content: ''
             position: absolute
@@ -787,6 +791,7 @@ main
         +media(500)
             font-size: 22rem
         +media(1000)
+            padding: 8rem 15rem
             font-size: 14rem
     &:hover
         transform: scale(1.04)
@@ -822,7 +827,7 @@ main
     +media(500)
         font-size: 22rem
     +media(1000)
-        font-size: 14rem
+        font-size: 20rem
 
 // aboutSavServis
 
@@ -1102,7 +1107,9 @@ footer
         font-weight: 600
         &+p
             position: relative
-            padding-left: 45rem
+            padding-left: 35rem
+            +media(400)
+                padding-left: 45rem
             &:before
                 content: '/'
                 position: absolute
@@ -1266,6 +1273,8 @@ footer
     &>div
         width: 50%
 .graphic
+    +media(500)
+        width: 50%
     p
         margin: 0
 .socialNetwork
@@ -1366,14 +1375,19 @@ footer
             margin: 0
     .w100
         width: 100%
-        
+.p0
+    padding: 0
 .sort
     p
         font-weight: 500
         font-size: 14rem
         color: #1e1e1e
-        margin-right: 50rem
-    select
+        margin-right: 30rem
+        +media(500)
+            margin-right: 50rem
+    .select
+        position: relative
+        display: inline-block
         outline: none
         appearance: none
         -webkit-appearance: none
@@ -1381,7 +1395,16 @@ footer
         color: #222
         border: 1rem solid #d9d9d9
         border-radius: 4rem
-        padding: 7rem 8rem
+        padding: 7rem 70rem 8rem 7rem
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            right: 0
+            background: red
+            width: 16rem
+            height: 16rem
+            border: 2rem solid #222
 
 .radioBlock
     column-gap: 20rem
@@ -1456,7 +1479,14 @@ footer
         border-top: none
         border-right: none
         transform: rotate(-45deg) translate(0, -50%)
-
+.checkBlock
+    max-height: 150rem
+    overflow: hidden
+.moreBlock
+    max-height: 210rem
+    overflow: scroll
+.more
+    cursor: pointer
 .mainBasket
     padding-bottom: 100rem
 .basketCard
@@ -1664,30 +1694,50 @@ footer
             color: #222
             font-weight: 400
             font-size: 16rem
+.marginNone
+    margin: 0 !important
 .mainMenu
     &>li
         position: relative
         border-bottom: 1rem solid #D9D9D9
-        margin-bottom: 10rem
+        // margin-bottom: 10rem
         width: 100%
+    a
+        display: block
+        width: 100%
+        padding: 10rem 0
+        font-weight: 400
+        color: #222
+        text-decoration: none
     h3
         margin: 0
-        font-weight: 400
-    span
-        cursor: pointer
-        position: absolute
-        display: block
-        top: 50%
+    .arrowWrap
+        top: 0
         right: 0
-        width: 8rem
-        height: 8rem
-        border: 2rem solid #222
-        border-top: none
-        border-left: none
-        transform: translate(-50%, -50%) rotate(45deg)
-        z-index: 5
+        width: 20rem
+        height: 20rem
+        cursor: pointer
+        transition: .5s ease all
+        &:hover
+            span
+                transform: rotate(-45deg) translate(-50%, -100%)
+                right: -3rem
+        span
+            cursor: pointer
+            position: absolute
+            display: block
+            top: 50%
+            right: 0
+            width: 8rem
+            height: 8rem
+            border: 2rem solid #222
+            border-top: none
+            border-left: none
+            transition: .5s ease all
+            transform: translate(-50%, -50%) rotate(45deg)
+
     &>li
-        padding: 0 0 7rem 0
+        // padding: 0 0 7rem 0
         color: #222
         font-weight: 400
         font-size: 16rem
@@ -1701,9 +1751,8 @@ footer
     h4
         font-weight: 400
 .clickForm
-    position: absolute
     display: block
-    z-index: 4
+    margin-bottom: 50rem
     +media(500)
         position: static
 .checboxBlock
@@ -1733,8 +1782,9 @@ footer
         border: 2rem solid #222
         transform: rotate(-45deg)
     li
-        // font-size: 14rem
         font-size: 26rem
+        +media(1000)
+            font-size: 17rem
         &+li
             margin-left: 20rem
         &:first-child
@@ -2190,7 +2240,9 @@ footer
 .subMenuBlock,
 .orderPopapBlock,
 .catalogSubBlock,
-.bgAbsoluteFooterBlock
+.bgAbsoluteFooterBlock,
+.formBlock,
+.sparePartsMenuBlock
     display: block !important
 
 .arrowRotate
