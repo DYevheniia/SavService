@@ -354,30 +354,40 @@ more.forEach(moreButton => {
 
 // слайдер картинок товару
 
-const sliderImage = document.querySelectorAll(".slider-container img")
+window.onload = function () {
+    const slider = new InfinitySlider(".slider", {
+        gap: 10,                                
+        isArrows: true,                    
+        baseCardWidth: "120rem",
+        isDots: true
+    });
+    
+    slider.init();
+    window.onresize = function () {
+        slider.init();
+    };
+   
+}
 
-// if (sliderImage) {
-//     const sliderContainerWidth = document.querySelector(".slider-container").getBoundingClientRect().width
-//     window.addEventListener("load", function () {
-//         const slider = new InfinitySlider(".slider", {
-//             gap: 20,                                
-//             isArrows: true,                    
-//             baseCardWidth: 120 
-//         });
-        
-//         slider.init();
-//         window.onresize = function () {
-//             slider.init();
-//         };
-//     })
-// }
+// Клфк на маленьку картинку відкривається в великій
+
+const sliderImage = document.querySelectorAll(".slider-container img"),
+    bigSliderImage = document.querySelector(".bigImage img")
+
+sliderImage.forEach(img => {
+    img.addEventListener("click", () => {
+        console.log(sliderImage);
+        srcImage = img.getAttribute("src")
+        bigSliderImage.setAttribute("src", srcImage)
+    })
+})
 
 // Слайдер на головній сторінці(машини)
 
-// const excavator = [...document.querySelectorAll(".excavator")]
+const excavator = [...document.querySelectorAll(".excavator")]
 
-// if (excavator) {
-//         let excavatorI = 0
+// window.addEventListener("load", () => {
+//     let excavatorI = 0
 //     animateElement()
 //     setInterval(() => {
 //         if (excavatorI == excavator.length-1) {
@@ -387,7 +397,7 @@ const sliderImage = document.querySelectorAll(".slider-container img")
 //         }
 //         animateElement();
 //     }, 2500)
-    
+
 //     function animateElement() {
 //         excavator[excavatorI].style.right = "50%"  
 //         excavator[excavatorI].style.transform = "translate(50%, -55%)"
@@ -396,4 +406,4 @@ const sliderImage = document.querySelectorAll(".slider-container img")
 //             excavator[excavatorI].style.transform = "translate(100%, -85%) scale(0.5)"
 //         }, 2400)
 //     }
-// }
+// })
