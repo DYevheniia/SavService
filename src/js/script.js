@@ -293,19 +293,21 @@ repairOrder.forEach(order => {
         })
     })
 })
-policyRepair.addEventListener("click", (e) => {
-    e.preventDefault()
-    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
-    policyBG.classList.toggle("policyBGBlock")
-})
-crossPolicyRepair.addEventListener("click", () => {
-    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
-    policyBG.classList.toggle("policyBGBlock")
-})
-policyBG.addEventListener("click", () => {
-    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
-    policyBG.classList.toggle("policyBGBlock")
-})
+if (privacyPolicyRepair) {
+    policyRepair.addEventListener("click", (e) => {
+        e.preventDefault()
+        privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+        policyBG.classList.toggle("policyBGBlock")
+    })
+    crossPolicyRepair.addEventListener("click", () => {
+        privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+        policyBG.classList.toggle("policyBGBlock")
+    })
+    policyBG.addEventListener("click", () => {
+        privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+        policyBG.classList.toggle("policyBGBlock")
+    })
+}
 crossOrder.forEach(cross => {
     bgAbsoluteOrder.forEach(bg => {
         cross.addEventListener("click", function () {
@@ -425,8 +427,8 @@ function sliderTouch () {
 // Слайдер на головній сторінці(машини)
 
 let excavator = [...document.querySelectorAll(".excavator")]
-if (excavator.length !== 0){
-
+console.log(excavator);
+if (excavator.length > 0){
     let excavatorI = 0
     animateElement()
     setInterval(() => {
@@ -448,45 +450,3 @@ if (excavator.length !== 0){
     }
 
 }
-
-
-// window.onload = function () {
-//     let sliderCopy = document.querySelector("#sliderCopy")
-
-//     if (sliderCopy) {
-//         const slider = new InfinitySlider("#sliderCopy", {
-//             gap: 0,                                
-//             isDots: true,
-//             distanceToDots: 10,  
-//             isEffectFadeOut: true
-//         });
-//         slider.init();
-        
-//         let sliderDots = sliderCopy.querySelector(".dots-container"),
-//             sliderDotsSpans = [...sliderDots.querySelectorAll("span")],
-//             sliderImages = sliderCopy.querySelectorAll(".slider-container img"),
-//             dotsWrapper = document.createElement("div")
-
-//         dotsWrapper.classList.add("slider-container")
-//         sliderDotsSpans.forEach(span => {
-//             dotsWrapper.appendChild(span)
-//         })
-//         sliderDots.appendChild(dotsWrapper)
-//         sliderDots.id = "sliderDots"
-        
-//         for (let i = 0; i < sliderDotsSpans.length; i++) {
-//             sliderDotsSpans[i].appendChild(sliderImages[i].cloneNode())
-//         }
-//         const dotSlider = new InfinitySlider("#sliderDots", {
-//             gap: 10,                                
-//             isArrows: true,
-//             baseCardWidth: "120rem"
-//         });
-//         setTimeout(() => {
-//             dotSlider.init();
-//         }, 1000)
-//         window.onresize = function () {
-//             dotSlider.init();
-//         };
-//     }
-// }
