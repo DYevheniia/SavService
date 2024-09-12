@@ -81,28 +81,31 @@ policyFooter.forEach(footer => {
 
 const policyArrContacts = document.querySelectorAll(".policyContacts"),
     privacyPolicyBlockContacts = document.querySelectorAll(".privacyPolicyContacts"),
-    crossPolicyContacts = document.querySelectorAll(".crossPolicyContacts")
-if (policyArrContacts) {
+    crossPolicyContacts = document.querySelectorAll(".crossPolicyContacts"),
+    bgPolicyContact = document.querySelector(".feedbackContacts")
     
-    policyArrContacts.forEach(policy => {
-        privacyPolicyBlockContacts.forEach(privacy => {
-            bgAbsolute.forEach(bg => {
-                policy.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    privacy.classList.toggle("privacyPolicyBlockContacts")
-                    bg.classList.toggle("feedbackBlock")
-                })
-                crossPolicyContacts.forEach(cross => {
-                    cross.addEventListener("click", function () {
-                        privacy.classList.toggle("privacyPolicyBlockContacts")
-                        bg.classList.toggle("feedbackBlock")
-                    })
-                })
+policyArrContacts.forEach(policy => {
+    privacyPolicyBlockContacts.forEach(privacy => {
+        policy.addEventListener("click", function (e) {
+            e.preventDefault();
+            privacy.classList.toggle("privacyPolicyBlockContacts")
+            bgPolicyContact.classList.toggle("feedbackBlockContacts")
+        })
+        crossPolicyContacts.forEach(cross => {
+            cross.addEventListener("click", function () {
+                privacy.classList.toggle("privacyPolicyBlockContacts")
+                bgPolicyContact.classList.toggle("feedbackBlockContacts")
             })
         })
+            
     })
-}
-
+})
+privacyPolicyBlockContacts.forEach(privacy => {
+    bgPolicyContact.addEventListener("click", () => {
+        privacy.classList.toggle("privacyPolicyBlockContacts")
+        bgPolicyContact.classList.toggle("feedbackBlockContacts")
+    })
+})
 // Клік на кнопку пошук, поява поля вводу(Клік на пошук закриває поле)
 
 const searchBlocksWrap = document.querySelectorAll(".searchBlockWrap"),
@@ -126,70 +129,59 @@ searchArr.forEach(search => {
 
 const headerMenu = document.querySelectorAll("#headerMenu"),
     headerSubMenu = document.querySelectorAll("#headerSubMenu"),
-    recentBg = document.querySelector(".recent-bg"),
     recentBgBg = document.querySelectorAll(".recent-bg-bg"),
     color = document.querySelectorAll(".color"),
     sparePartsMenu = document.querySelectorAll(".sparePartsMenu"),
     arrowArr = document.querySelectorAll(".arrow"),
     colorA = document.querySelectorAll(".colorA")
-if (recentBg) { 
-    headerMenu.forEach(menu => {
-        headerSubMenu.forEach(subMenu => {
-            menu.addEventListener("click", function () {
-                subMenu.classList.toggle("subMenuBlock")
-                for (i = 0; i < color.length; i++) {
-                    color[i].classList.toggle("colorFocus")
-                }
-                for (i = 0; i < colorA.length; i++) {
-                    colorA[i].classList.toggle("colorFocusA")
-                }
-                
-                recentBg.classList.toggle("recent-bg-click")
-            })
-            color.forEach(burger => {
-                burger.addEventListener("click", function () {
-                    console.log("dej");
-                    subMenu.classList.toggle("subMenuBlock")
-                    for (i = 0; i < color.length; i++) {
-                        color[i].classList.toggle("colorFocus")
-                    }
-                    for (i = 0; i < colorA.length; i++) {
-                        colorA[i].classList.toggle("colorFocusA")
-                    }
-                    
-                    recentBg.classList.toggle("recent-bg-click")
-                })
-            })
-            menu.addEventListener("click", function () {
-                subMenu.classList.toggle("subMenuBlock")
-                for (i = 0; i < color.length; i++) {
-                    color[i].classList.toggle("colorFocus")
-                }
-                for (i = 0; i < colorA.length; i++) {
-                    colorA[i].classList.toggle("colorFocusA")
-                }
-                
-                recentBg.classList.toggle("recent-bg-click")
-            })
-            recentBg.addEventListener("click", function () {
-                recentBg.classList.toggle("recent-bg-click")
-                subMenu.classList.toggle("subMenuBlock")
-                sparePartsMenu.forEach(spare => {
-                    spare.classList.toggle("sparePartsMenuClick")
-                })
-                arrowArr.forEach(arrow => {
-                    arrow.classList.toggle("arrowBottom")
-                })
-                for (i = 0; i < color.length; i++) {
-                    color[i].classList.toggle("colorFocus")
-                }
-                for (i = 0; i < colorA.length; i++) {
-                    colorA[i].classList.toggle("colorFocusA")
-                }
-            })
-            
+    
+let recentBg = document.querySelector(".recent-bg")
+
+if (recentBg !== null) {
+    headerSubMenu.forEach(subMenu => {
+        headerMenu[0].addEventListener("click", function () {
+            subMenu.classList.toggle("subMenuBlock")
+            for (i = 0; i < color.length; i++) {
+                color[i].classList.toggle("colorFocus")
+            }
+            for (i = 0; i < colorA.length; i++) {
+                colorA[i].classList.toggle("colorFocusA")
+            }
+
+            recentBg.classList.toggle("recent-bg-click")
         })
+        color.forEach(burger => {
+            burger.addEventListener("click", function () {
+                subMenu.classList.toggle("subMenuBlock")
+                for (i = 0; i < color.length; i++) {
+                    color[i].classList.toggle("colorFocus")
+                }
+                for (i = 0; i < colorA.length; i++) {
+                    colorA[i].classList.toggle("colorFocusA")
+                }
+                
+                recentBg.classList.toggle("recent-bg-click")
+            })
+        })
+        recentBg.addEventListener("click", function () {
+            recentBg.classList.toggle("recent-bg-click")
+            subMenu.classList.toggle("subMenuBlock")
+            sparePartsMenu.forEach(spare => {
+                spare.classList.toggle("sparePartsMenuClick")
+            })
+            arrowArr.forEach(arrow => {
+                arrow.classList.toggle("arrowBottom")
+            })
+            for (i = 0; i < color.length; i++) {
+                color[i].classList.toggle("colorFocus")
+            }
+            for (i = 0; i < colorA.length; i++) {
+                colorA[i].classList.toggle("colorFocusA")
+            }
+        })
+        
     })
+
 } else {
     headerMenu.forEach(menu => {
         headerSubMenu.forEach(subMenu => {
@@ -226,6 +218,7 @@ if (recentBg) {
         })
     })
 }
+
 
 // Відкриття сабменю при кліку на стрілочку
 
@@ -284,18 +277,34 @@ yourNumber.forEach(number => {
 const repairOrder = document.querySelectorAll(".repairOrder"),
     orderPopap = document.querySelector(".formContactsAbsolute1"),
     bgAbsoluteOrder = document.querySelectorAll(".bgAbsoluteOrder"),
-    crossOrder = document.querySelectorAll(".crossOrder")
+    crossOrder = document.querySelectorAll(".crossOrder"),
+    policyRepair = document.querySelector(".policyRepair"),
+    privacyPolicyRepair = document.querySelector(".privacyPolicyRepair"),
+    crossPolicyRepair = document.querySelector(".crossPolicyRepair"),
+    policyBG = document.querySelector(".policyBG")
+    // policyBGBlock
 
 repairOrder.forEach(order => {
-    console.log("femklj");
     bgAbsoluteOrder.forEach(bg => {
         order.addEventListener("click", function (e) {
             e.preventDefault()
-            console.log("1");
             bg.classList.toggle("repairOrderRecentBgBg")
             orderPopap.classList.toggle("orderPopapBlock")
         })
     })
+})
+policyRepair.addEventListener("click", (e) => {
+    e.preventDefault()
+    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+    policyBG.classList.toggle("policyBGBlock")
+})
+crossPolicyRepair.addEventListener("click", () => {
+    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+    policyBG.classList.toggle("policyBGBlock")
+})
+policyBG.addEventListener("click", () => {
+    privacyPolicyRepair.classList.toggle("privacyPolicyRepairBlock")
+    policyBG.classList.toggle("policyBGBlock")
 })
 crossOrder.forEach(cross => {
     bgAbsoluteOrder.forEach(bg => {
@@ -304,10 +313,10 @@ crossOrder.forEach(cross => {
             orderPopap.classList.toggle("orderPopapBlock")
         })
         bg.addEventListener("click", function () {
-            console.log("kdsmflk");
             orderPopap.classList.toggle("orderPopapBlock")
             bg.classList.toggle("repairOrderRecentBgBg")
         })
+        
     })
 })
 
@@ -349,61 +358,135 @@ for (i = 0; i < checkBlock.length; i++) {
 more.forEach(moreButton => {
     moreButton.addEventListener("click", () => {
         moreButton.previousElementSibling.classList.add("moreBlock")
+        moreButton.style.display = "none"
     })
 })
 
 // слайдер картинок товару
+window.addEventListener("load", () => {
 
-window.onload = function () {
-    const slider = new InfinitySlider(".slider", {
-        gap: 10,                                
-        isArrows: true,                    
-        baseCardWidth: "120rem",
-        isDots: true
-    });
-    
-    slider.init();
-    window.onresize = function () {
+    let sliderImage = document.querySelectorAll(".slider-container img"),
+        sliderB = document.querySelector("#slider")
+
+    if (sliderImage.length > 0) {
+        sliderImage.forEach(img => {
+            img.addEventListener("click", () => {
+                sliderTouch()
+            })
+        })
+        const slider = new InfinitySlider("#slider", {
+            gap: 0,                                
+            isArrows: true,                    
+            baseCardWidth: "100%"
+        });
         slider.init();
-    };
-   
-}
+        window.onresize = function () {
+            slider.init();
+            sliderTouch()
+        };
+        sliderTouch()
 
-// Клфк на маленьку картинку відкривається в великій
+        sliderB.addEventListener("touchstart", ()=>{
+            sliderTouch()
+        })
+        sliderB.addEventListener("click", () => {
+            sliderTouch()
+        })
+        const sliderCards = new InfinitySlider("#sliderCards", {
+            gap: 20,                                
+            isArrows: true,                    
+            baseCardWidth: "300rem"
+        });
+        sliderCards.init();
+        sliderTouch()
+        window.onresize = function () {
+            sliderCards.init();
+            sliderTouch()
+        };
+    }
+    // Клфк на маленьку картинку відкривається в великій
 
-const sliderImage = document.querySelectorAll(".slider-container img"),
-    bigSliderImage = document.querySelector(".bigImage img")
-
-sliderImage.forEach(img => {
-    img.addEventListener("click", () => {
-        console.log(sliderImage);
-        srcImage = img.getAttribute("src")
-        bigSliderImage.setAttribute("src", srcImage)
-    })
 })
+
+function sliderTouch () {
+    let sliderImage = document.querySelectorAll(".sliderImage img")
+        
+    const bigSliderImage = document.querySelector(".bigImage img")
+    // cardsNoneCliderContainer.height = cardSliderHeight
+    sliderImage.forEach(img => {
+        img.addEventListener("click", () => {
+            srcImage = img.getAttribute("src")
+            bigSliderImage.setAttribute("src", srcImage)
+        })
+        img.height = img.width
+    })
+}
 
 // Слайдер на головній сторінці(машини)
 
-const excavator = [...document.querySelectorAll(".excavator")]
+let excavator = [...document.querySelectorAll(".excavator")]
+if (excavator.length !== 0){
 
-// window.addEventListener("load", () => {
-//     let excavatorI = 0
-//     animateElement()
-//     setInterval(() => {
-//         if (excavatorI == excavator.length-1) {
-//             excavatorI = 0
-//         } else {
-//             excavatorI++
+    let excavatorI = 0
+    animateElement()
+    setInterval(() => {
+        if (excavatorI == excavator.length-1) {
+            excavatorI = 0
+        } else {
+            excavatorI++
+        }
+        animateElement();
+    }, 2500)
+
+    function animateElement() {
+        excavator[excavatorI].style.right = "50%"  
+        excavator[excavatorI].style.transform = "translate(50%, -55%)"
+        setTimeout(() => {
+            excavator[excavatorI].style.right = "-100%"  
+            excavator[excavatorI].style.transform = "translate(100%, -85%) scale(0.5)"
+        }, 2400)
+    }
+
+}
+
+
+// window.onload = function () {
+//     let sliderCopy = document.querySelector("#sliderCopy")
+
+//     if (sliderCopy) {
+//         const slider = new InfinitySlider("#sliderCopy", {
+//             gap: 0,                                
+//             isDots: true,
+//             distanceToDots: 10,  
+//             isEffectFadeOut: true
+//         });
+//         slider.init();
+        
+//         let sliderDots = sliderCopy.querySelector(".dots-container"),
+//             sliderDotsSpans = [...sliderDots.querySelectorAll("span")],
+//             sliderImages = sliderCopy.querySelectorAll(".slider-container img"),
+//             dotsWrapper = document.createElement("div")
+
+//         dotsWrapper.classList.add("slider-container")
+//         sliderDotsSpans.forEach(span => {
+//             dotsWrapper.appendChild(span)
+//         })
+//         sliderDots.appendChild(dotsWrapper)
+//         sliderDots.id = "sliderDots"
+        
+//         for (let i = 0; i < sliderDotsSpans.length; i++) {
+//             sliderDotsSpans[i].appendChild(sliderImages[i].cloneNode())
 //         }
-//         animateElement();
-//     }, 2500)
-
-//     function animateElement() {
-//         excavator[excavatorI].style.right = "50%"  
-//         excavator[excavatorI].style.transform = "translate(50%, -55%)"
+//         const dotSlider = new InfinitySlider("#sliderDots", {
+//             gap: 10,                                
+//             isArrows: true,
+//             baseCardWidth: "120rem"
+//         });
 //         setTimeout(() => {
-//             excavator[excavatorI].style.right = "-100%"  
-//             excavator[excavatorI].style.transform = "translate(100%, -85%) scale(0.5)"
-//         }, 2400)
+//             dotSlider.init();
+//         }, 1000)
+//         window.onresize = function () {
+//             dotSlider.init();
+//         };
 //     }
-// })
+// }

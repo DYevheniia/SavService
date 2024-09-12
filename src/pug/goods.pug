@@ -17,6 +17,9 @@ html(lang="en")
             .bgAbsolute
             .formContactsAbsolute
                 include components/formContacts
+                .privacyPolicy 
+                    .crossPolicy
+                    include components/policy
         main 
             .recent-bg-bg
             .wrapper.flex-between 
@@ -34,14 +37,29 @@ html(lang="en")
                 div 
                     .bigImage 
                         img(src="img/card-image.png", alt="")
-                    .sliderImage.flex-between
-                        .slider#slider.flex-between
+                    .sliderImage
+                        .slider#slider
                             .slider-container
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/sliderImage1.png", alt="")
+                                img(src="img/sliderImage2.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/sliderImage1.png", alt="")
+                                img(src="img/sliderImage2.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/sliderImage1.png", alt="")
+                                img(src="img/sliderImage2.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/sliderImage1.png", alt="")
+                                img(src="img/sliderImage2.png", alt="")
+                                img(src="img/card-image.png", alt="")
+                                img(src="img/sliderImage1.png", alt="")
+                                img(src="img/sliderImage2.png", alt="")
+                                img(src="img/card-image.png", alt="")
                                 img(src="img/sliderImage1.png", alt="")
                                 img(src="img/sliderImage2.png", alt="")
                                 img(src="img/sliderImage3.png", alt="")
                                 img(src="img/sliderImage4.png", alt="")
-                                img(src="img/card-image.png", alt="")
                                 //- img(src="img/sliderImage1.png", alt="")
                 .cardInfoText
                     p Під замовлення
@@ -70,21 +88,23 @@ html(lang="en")
                             .basketCardPrice
                                 p 577 грн
                         button(type="submit" name="" value="1").buy Купити
-            //- .popular 
+            .popular 
                 .wrapper
                     h2 Схожі товари
                     p.popular-text 
                         a(href="#") Усі товари
-                    .cards-block.flex-between
-                        include components/card.pug
-                        include components/card.pug
-                        include components/card.pug
-                        include components/card.pug
+                    .cardsNoneHeight
+                        .slider#sliderCards
+                            .slider-container
+                                include components/card.pug
+                                include components/card.pug
+                                include components/card.pug
+                                include components/card.pug
                        
             .catalogText
                 .flex.wrapper
                     p У разі відсутності необхідних Вам запасних частин у переліку на нашому сайті, 
-                        a(href="") заповніть тут заявку, 
+                        a(href="contacts.html") заповніть тут заявку, 
                         span або зателефонуйте нам (098 768 13 31) для спеціального замовлення цих товарів.
         include components/footer
         script(src="js/script.js") 

@@ -17,6 +17,9 @@ html(lang="en")
             .bgAbsolute
             .formContactsAbsolute
                 include components/formContacts
+                .privacyPolicy 
+                    .crossPolicy
+                    include components/policy
         main
             .recent-bg-bg
             .wrapper.flex-between.wrap500
@@ -30,7 +33,7 @@ html(lang="en")
                         option(value="") найпопулярніші
             .catalog.wrapper.flex
                 .w100
-                    p.filterButton Фільтр
+                    h1.filterButton Фільтр
                     form(action="").clickForm
                         .checboxBlock
                             p Запчастини
@@ -266,7 +269,7 @@ html(lang="en")
             .catalogText
                 .flex.wrapper
                     p У разі відсутності необхідних Вам запасних частин у переліку на нашому сайті, 
-                        a(href="") заповніть тут заявку, 
+                        a(href="contacts.html") заповніть тут заявку, 
                         span або зателефонуйте нам (098 768 13 31) для спеціального замовлення цих товарів.
         include components/footer
         script(src="js/script.js") 

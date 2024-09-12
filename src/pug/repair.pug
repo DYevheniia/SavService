@@ -17,14 +17,17 @@ html(lang="en")
             .bgAbsolute
             .formContactsAbsolute
                 include components/formContacts
+                .privacyPolicy 
+                    .crossPolicy
+                    include components/policy
         main 
             .bgAbsoluteOrder
             .recent-bg-bg
+            .policyBG
             .formContactsAbsolute1
                 form(action="", method="post", class="orderPopap") 
                     .crossOrder
-                    h3 Зворотній звʼязок
-                    p Маєте питання чи пропозиції? Ви завжди можете звʼязатися з нами.  
+                    h3 Замовити
                     .flex-between.contactInfo
                         div 
                             label(for="") Ваше імʼя*
@@ -42,8 +45,11 @@ html(lang="en")
                     .flex.w100
                         input(type="checkbox",id="orderPopapCheckbox" name="").checkbox
                         label(for="orderPopapCheckbox" class="flex checkboxLabel") 
-                            p Я прочитав (ла) <b class="policy">політику конфіденційності</b> і згоден (на) з вимогами 
+                            p Я прочитав (ла) <b class="policyRepair">політику конфіденційності</b> і згоден (на) з вимогами 
                     button(type="submit", name="", class="contactButton") Відправити
+            .privacyPolicyRepair
+                .crossPolicyRepair
+                include components/policy
             .repairBlock
                 .wrapper
                     h1 Ремонтуємо техніку JCB. Зокрема виконуємо наступне:
@@ -74,7 +80,7 @@ html(lang="en")
                                     p заміну: турбіни, стартера, генератора, радіатора, вентилятора, форсунок, датчиків, подушок та піддону двигуна, ременів та роликів, шлангів, патрубків, акумулятора;
                                 li
                                     p монтаж/демонтаж головки блока циліндрів двигуна, заміну маховика, прокладок та сальників;
-                            p.but.repairOrder
+                            p.but.repairOrder.repairButton
                                 a(href="") Замовити
                         .CenterImageWrap
                             img(src="img/wheeledExcavator.png", alt="")
@@ -103,7 +109,7 @@ html(lang="en")
                                 p Заміна гідравлічних шлангів
                     div.pro
                         p На професійному устаткуванні, методом наплавлення та розточування ми відновлюємо стандартні розміри посадкових місць втулок та пальців.
-                        p.but.repairOrder
+                        p.but.repairOrder.repairButton
                             a(href="") Замовити
                 div.bg
                     h2 Ремонт:

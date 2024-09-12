@@ -17,6 +17,9 @@ html(lang="en")
             .bgAbsolute
             .formContactsAbsolute
                 include components/formContacts
+                .privacyPolicy 
+                    .crossPolicy
+                    include components/policy
         main 
             .recent-bg-bg
             .wrapper
@@ -36,7 +39,7 @@ html(lang="en")
                         img(src="img/excavator.png", alt="")
             .popular.wrapper
                 h2 Популярні товари
-                .cards-block.flex-between
+                .cards-block.flex-between.cards-block-grid
                     include components/secondCard
                     include components/secondCard
                     include components/secondCard

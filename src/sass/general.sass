@@ -27,8 +27,6 @@ textarea
     font-size: 14rem !important
 // Загальні класи
 
-
-
 .wrapper
     max-width: 1320rem
     margin: 0 auto
@@ -66,6 +64,7 @@ textarea
     background: #F9B50A
     transition: .5s ease all
     box-sizing: border-box
+    cursor: pointer
 .flex
     display: flex
     align-items: center
@@ -97,6 +96,9 @@ textarea
         width: 70%
     +media(1100)
         width: 50%
+
+.formContactsAbsolute
+    font-size: 18rem
 .repairOrder
     cursor: pointer
     transition: .5s ease all
@@ -135,7 +137,8 @@ textarea
 
 .bgAbsolute,
 .bgAbsoluteOrder,
-.bgAbsoluteFooter
+.bgAbsoluteFooter,
+.feedbackContacts
     cursor: pointer
     display: none
     position: fixed
@@ -145,7 +148,8 @@ textarea
     width: 100%
     height: 100%
     z-index: 2
-.feedbackBlock
+.feedbackBlock,
+.feedbackBlockContacts
     display: block
 // Header-info
 
@@ -220,12 +224,12 @@ textarea
             padding: 10rem 0
             &:first-child
                 position: relative
-                &:hover
-                    span
-                        background: #F9B50A
-                        color: #F9B50A
-                    a
-                        color: #F9B50A
+            &:hover
+                span
+                    background: #F9B50A
+                    color: #F9B50A
+                a
+                    color: #F9B50A
             
             a
                 color: #222
@@ -419,9 +423,9 @@ ul.sparePartsMenu
         width: 100%
         background: #F9B50A
         color: #222
+        cursor: pointer
         &:hover
             color: #fff
-            cursor: pointer
 // Header-content
 
 
@@ -466,7 +470,9 @@ ul.sparePartsMenu
 main
     position: relative
     padding-bottom: 100rem
-.recent-bg-bg
+.recent-bg-bg,
+.policyBG
+    cursor: pointer
     position: absolute
     display: none
     // bottom: 0
@@ -476,9 +482,6 @@ main
     height: 100%
     z-index: 2
 
-.recent-bg-click,
-.recent-bg-bg-click
-    display: block
 
 .headerContentWrap
     flex-wrap: wrap
@@ -603,7 +606,7 @@ main
 // assortment
 .assortment
     display: flex
-    align-items: center
+    align-items: stretch
     justify-content: center
     flex-wrap: wrap
     background: #2B2A28
@@ -648,7 +651,9 @@ main
         left: 0
         width: 100%
         height: 100%
-
+        cursor: pointer
+        &:hover h2
+            font-size: 278rem    
     h2
         margin: 0
         min-height: 50rem
@@ -663,12 +668,11 @@ main
             margin: 0 0 70rem 0
 
 
-
 // popular
 
 
 .popular
-    padding: 96rem 20rem 45rem
+    padding: 45rem 20rem
     background: #FFFFFA
     h2
         margin: 0
@@ -749,18 +753,18 @@ main
     padding: 20rem
     box-sizing: border-box
     border-radius: 9rem
-    box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
+    // box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
     transition: .5s ease all
     width: 100%
-    
-
-
+    border: 1rem solid #D9D9D9
     img
         width: 100%
         border-bottom: 1rem solid #D9D9D9
     
     .cardArticle
-        margin: 15rem 0 7rem 0
+        padding: 15rem 0 7rem 0
+        margin: 0
+
         font-weight: 500
         font-size: 24rem
         color: #222
@@ -786,6 +790,7 @@ main
         z-index: 1
         font-size: 28rem
         padding: 15rem
+        cursor: pointer
         &:hover
             color: #fff
         +media(500)
@@ -794,7 +799,9 @@ main
             padding: 8rem 15rem
             font-size: 14rem
     &:hover
-        transform: scale(1.04)
+        // transform: scale(1.01)
+        box-shadow: 0rem 0rem 24rem 4rem rgba(33,32,30,0.1)
+
 
 .newPosition
     position: absolute
@@ -806,6 +813,7 @@ main
     color: #fff
     padding: 4rem 8rem
     border-radius: 9rem
+    z-index: 2
     +media(500)
         font-size: 18rem
     +media(1000)
@@ -1243,17 +1251,21 @@ footer
         .box,
         form
             width: 100%
-    h2
+    h2,h1
         color: #222
         font-weight: 600
         font-size: 20rem
         line-height: 24rem
+    a
+        &:hover
+            color: #f9b50a
     p,address,a
         text-decoration: none
         color: #222
         font-weight: 400
         font-size: 16rem
         line-height: 20rem
+        transition: .5s ease all
         +media(375)
             font-size: 18rem
         +media(425)
@@ -1275,17 +1287,20 @@ footer
 .graphic
     +media(500)
         width: 50%
+    
     p
         margin: 0
 .socialNetwork
     display: flex
     align-items: center
-    span
+    a
         display: block
         margin-right: 10rem
         width: 25rem
         height: 25rem
         border-radius: 5rem
+        &:hover
+            transform: scale(1.1)
         &:nth-child(1)
             background: url(../img/fb.svg) no-repeat center / cover
         &:nth-child(2)
@@ -1375,6 +1390,7 @@ footer
             margin: 0
     .w100
         width: 100%
+        max-width: none
 .p0
     padding: 0
 .sort
@@ -1598,6 +1614,7 @@ footer
         font-size: 23rem
         width: 35rem !important
         padding: 0
+        cursor: pointer
         &:nth-child(1)
             border-radius: 4rem 0 0 4rem
         &:nth-child(3)
@@ -1625,7 +1642,7 @@ footer
         flex-wrap: wrap
         +media(415)
             flex-wrap: nowrap
-        p
+        h1
             font-weight: 500
             font-size: 36rem
         b
@@ -1668,7 +1685,7 @@ footer
         flex-wrap: nowrap
         row-gap: 20rem
         column-gap: 20rem
-    &>div>p
+    &>div>h1
         margin: 0
         padding: 5rem 9rem
         color: #222
@@ -1786,6 +1803,7 @@ footer
         transform: rotate(-45deg)
     li
         font-size: 26rem
+        cursor: pointer
         +media(1000)
             font-size: 17rem
         &+li
@@ -1812,13 +1830,14 @@ footer
         display: inline-block
 
 .cardInfo
+    padding-bottom: 45em
     flex-wrap: wrap
     align-items: start
-    +media(500)
+    +media(550)
         flex-wrap: nowrap
     &>div
         width: 100%
-        +media(500)
+        +media(550)
             width: 50%
     .cardCount
         margin-right: 30rem
@@ -1839,40 +1858,110 @@ footer
         width: 100%
         border: 1rem solid #D9D9D9            
 
-.sliderImage 
-    div
-        width: 100%
+.sliderImage
+    .slider-container
+        max-width: 80%
+        margin: 0 auto
+        min-height: 200rem
+        +media(350)
+            min-height: 225rem
+        +media(400)
+            min-height: 160rem
+        +media(430)
+            min-height: 180rem
+        +media(480)
+            min-height: 190rem
+        +media(500)
+            min-height: 200rem
+        +media(526)
+            min-height: 160rem
+        +media(580)
+            min-height: 200rem
+        +media(798)
+            min-height: 130rem
+        +media(860)
+            min-height: 140rem
+        +media(920)
+            min-height: 150rem
+        +media(989)
+            min-height: 160rem
+        +media(1000)
+            min-height: 140rem
+        +media(1058)
+            min-height: 100rem
+        +media(1080)
+            min-height: 110rem
+        +media(1200)
+            min-height: 120rem
+        +media(1300)
+            min-height: 130rem
+        +media(1318)
+            min-height: 100rem
+        +media(1350)
+            min-height: 105rem
+
+        img
+            border: 1rem solid #d9d9d9
+            object-fit: cover
+            cursor: pointer
+            transform: scale(0.9)
+
+.cardsNoneHeight
+    .slider-container
+        max-height: 550rem
+        +media(330)
+            max-height: 1000rem 
+        +media(743)
+            max-height: 570rem
+        +media(860)
+            max-height: 600rem
+        +media(930)
+            max-height: 650rem
+        +media(1000)
+            max-height: 550rem
+        +media(1100)
+            max-height: 450rem
+        +media(1250)
+            max-height: 500rem
+    .card
+        height: auto
     img
-        border: 1rem solid #D9D9D9
-        box-sizing: border-box
-    .left.slider_navigation,
-    .right.slider_navigation 
-        position: relative
-        // display: block
-        max-width: 30rem
-        width: 100%
-        height: 30rem
-        background: #F9B50A
-        border-radius: 50%
-        &::before
-            content: ''
-            position: absolute
-            top: 50%
-            left: 50%
-            width: 10rem
-            height: 10rem
-            border: 2rem solid #222
-            transform: translate(-50%, -50%) rotate(45deg)
-        &:first-child
-            &::before
-                border-right: none
-                border-top: none
-        &:last-child
-            &::before
-                border-bottom: none
-                border-left: none
-.slider-container
-    max-width: 550rem
+        height: auto
+        border: none
+    .cardArticle
+        border-top: 1rem solid #d9d9d9
+        
+
+
+.slider_navigation
+    position: absolute
+    top: calc( 50% - 10rem )
+    width: 35rem
+    height: 35rem
+    background: #F9B50A
+    border-radius: 50%
+    box-sizing: border-box
+    cursor: pointer
+    z-index: 2
+    &::before
+        content: ''
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 10rem
+        height: 10rem
+        border: 2rem solid #222
+        transform: translate(-50%, -50%) rotate(45deg)
+.right
+    right: 0
+    &::before
+        border-bottom: none
+        border-left: none
+.left
+    left: 0
+    &::before
+        border-top: 0
+        border-right: 0
     
 .cardInfoText
     &>p
@@ -1885,6 +1974,7 @@ footer
         border-radius: 9rem
         background: #222
     h1
+        color: #222
         font-weight: 600
         font-size: 24rem
         margin: 0 0 14rem 0
@@ -1937,6 +2027,10 @@ footer
     background: #F9B50A
     border: none
     border-radius: 9rem
+    transition: .5s ease all
+    cursor: pointer
+    &:hover
+        transform: scale(1.1)
 
 .rentBlock,
 .sellBlock
@@ -1980,6 +2074,7 @@ footer
         font-size: 20rem
         padding: 20rem
         background: #F9B50A
+        cursor: pointer
 
 .mainSell
     padding-bottom: 100rem
@@ -2055,12 +2150,14 @@ footer
             margin: 0
 .mainContent
     flex-wrap: wrap
-    +media(1480)
+    +media(1200)
         flex-wrap: nowrap
     .but
         margin: 0 auto
-        +media(1480)
+        +media(1200)
+            max-width: 315rem
             margin: 0
+
 .CenterImageWrap
     margin: 0 auto
     img
@@ -2075,6 +2172,10 @@ footer
         margin: 0 0 25rem 0
         font-weight: 500
         font-size: 18rem
+    .but
+        width: 100%
+        +media(1200)
+            max-width: 315rem
 .align
     align-items: start
 
@@ -2159,24 +2260,26 @@ footer
         padding: 20rem
         max-width: 315rem
         width: 100%
-
+        cursor: pointer
 
 .privacyPolicy,
 .privacyPolicyContacts,
-.privacyPolicyFooter
+.privacyPolicyFooter,
+.privacyPolicyRepair
     position: absolute
     background: #fff
     display: none
     box-sizing: border-box
     top: 0
     left: 50%
-    padding: 50rem 0 40rem
+    padding: 50rem 20rem 40rem
     width: 100%
     height: 100%
     transform: translate(-50%, 0)
     .crossPolicy,
     .crossPolicyContacts,
-    .crossPolicyFooter
+    .crossPolicyFooter,
+    .crossPolicyRepair
         position: absolute
         cursor: pointer
         width: 40rem
@@ -2202,15 +2305,14 @@ footer
             height: 3rem
             background: #000
             transform: rotate(-45deg)
+// .policyScroll
+//     overflow-y: scroll
+//     color: #222
+//     font-size: 18rem
 
-    p
-        padding: 0 30rem
-        max-height: 100%
-        height: 100%
-        overflow-y: scroll
-        font-size: 14rem
 .privacyPolicyContacts,
-.privacyPolicyFooter
+.privacyPolicyFooter,
+.privacyPolicyRepair
     display: none
     width: 90%
     height: 80%
@@ -2237,8 +2339,34 @@ footer
 .catalogSubBlock,
 .bgAbsoluteFooterBlock,
 .formBlock,
-.sparePartsMenuBlock
+.sparePartsMenuBlock,
+.recent-bg-click,
+.recent-bg-bg-click,
+.feedbackBlockContacts,
+.privacyPolicyRepairBlock,
+.policyBGBlock
     display: block !important
 
 .arrowRotate
     transform: rotate(-45deg) translate(-50%, -50%)!important
+
+div.policyStyle
+    overflow: scroll
+    height: 100%
+    padding-right: 30rem
+    h2
+        font-size: 30rem
+        color: #222
+    h3
+        font-size: 25rem
+        color: #222
+    h4
+        font-size: 20rem
+        color: #222
+    ul
+        ul
+            padding-left: 17rem
+            p
+                font-size: 14px
+    p
+        font-size: 14rem
