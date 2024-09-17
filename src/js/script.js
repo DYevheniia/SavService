@@ -367,6 +367,8 @@ if (arrowWrap !== 0) {
     })
 }
 
+// Перевірка форми
+
 let orderButton = document.querySelectorAll(".orderButtonForm"),
     delivery = document.querySelector('input[name="delivery"]:checked'),
     payment = document.querySelector('input[name="payment"]:checked')
@@ -449,24 +451,49 @@ window.addEventListener("load", () => {
             sliderTouch()
         };
     }
-    // Клфк на маленьку картинку відкривається в великій
-
+    
 })
+// Клік на маленьку картинку відкривається в великій
 
 function sliderTouch () {
     let sliderImage = document.querySelectorAll(".sliderImage img")
         
     const bigSliderImage = document.querySelector(".bigImage img")
-    // cardsNoneCliderContainer.height = cardSliderHeight
+
     sliderImage.forEach(img => {
         img.addEventListener("click", () => {
             srcImage = img.getAttribute("src")
             bigSliderImage.setAttribute("src", srcImage)
+            altImage = img.getAttribute("alt")
+            bigSliderImage.setAttribute("alt", srcImage)
         })
         img.height = img.width
     })
 }
 
+// Клік на велику картинку відкривається в попапі
+const bigSliderImage = document.querySelector(".bigImage img"),
+    popapImage = document.querySelector(".popapImage"),
+    popapImageBg = document.querySelector(".popapImageBg"),
+    popapImageCross = document.querySelector(".popapImageCross"),
+    popapImg = document.querySelector(".popapImage img")
+
+bigSliderImage.addEventListener("click", () => {
+    popapImage.classList.toggle("popapImageBlock")
+    popapImageBg.classList.toggle("popapImageBgBlock")
+    srcImage = bigSliderImage.getAttribute("src")
+    altImage = bigSliderImage.getAttribute("alt")
+    popapImg.setAttribute("src", srcImage)
+    popapImg.setAttribute("alt", altImage)
+})
+popapImageCross.addEventListener("click", () => {
+    popapImage.classList.toggle("popapImageBlock")
+    popapImageBg.classList.toggle("popapImageBgBlock")
+})
+popapImageBg.addEventListener("click", () => {
+    popapImage.classList.toggle("popapImageBlock")
+    popapImageBg.classList.toggle("popapImageBgBlock")
+})
 // Слайдер на головній сторінці(машини)
 
 let excavator = [...document.querySelectorAll(".excavator")]
