@@ -381,11 +381,9 @@ if (orderButton.length == 1) {
             event.preventDefault(); 
             alert('Будь ласка, виберіть спосіб доставки та спосіб оплати.');
         }else if (!delivery) {
-            console.log("fesfml;s");
             event.preventDefault();
             alert('Будь ласка, виберіть спосіб доставки.');
         } else if (!payment) {
-            console.log("fesfml;s");
             event.preventDefault();
             alert('Будь ласка, виберіть спосіб оплати.');
         }
@@ -472,28 +470,30 @@ function sliderTouch () {
 }
 
 // Клік на велику картинку відкривається в попапі
-const bigSliderImage = document.querySelector(".bigImage img"),
+let bigSliderImage = document.querySelector(".bigImage img"),
     popapImage = document.querySelector(".popapImage"),
     popapImageBg = document.querySelector(".popapImageBg"),
     popapImageCross = document.querySelector(".popapImageCross"),
     popapImg = document.querySelector(".popapImage img")
 
-bigSliderImage.addEventListener("click", () => {
-    popapImage.classList.toggle("popapImageBlock")
-    popapImageBg.classList.toggle("popapImageBgBlock")
-    srcImage = bigSliderImage.getAttribute("src")
-    altImage = bigSliderImage.getAttribute("alt")
-    popapImg.setAttribute("src", srcImage)
-    popapImg.setAttribute("alt", altImage)
-})
-popapImageCross.addEventListener("click", () => {
-    popapImage.classList.toggle("popapImageBlock")
-    popapImageBg.classList.toggle("popapImageBgBlock")
-})
-popapImageBg.addEventListener("click", () => {
-    popapImage.classList.toggle("popapImageBlock")
-    popapImageBg.classList.toggle("popapImageBgBlock")
-})
+if (bigSliderImage !== null) {
+    bigSliderImage.addEventListener("click", () => {
+        popapImage.classList.toggle("popapImageBlock")
+        popapImageBg.classList.toggle("popapImageBgBlock")
+        srcImage = bigSliderImage.getAttribute("src")
+        altImage = bigSliderImage.getAttribute("alt")
+        popapImg.setAttribute("src", srcImage)
+        popapImg.setAttribute("alt", altImage)
+    })
+    popapImageCross.addEventListener("click", () => {
+        popapImage.classList.toggle("popapImageBlock")
+        popapImageBg.classList.toggle("popapImageBgBlock")
+    })
+    popapImageBg.addEventListener("click", () => {
+        popapImage.classList.toggle("popapImageBlock")
+        popapImageBg.classList.toggle("popapImageBgBlock")
+    })
+}
 // Слайдер на головній сторінці(машини)
 
 let excavator = [...document.querySelectorAll(".excavator")]
