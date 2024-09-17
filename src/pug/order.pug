@@ -30,7 +30,7 @@ html(lang="en")
                         a(href="catalog.html") кошик
                     p оформлення замовлення
             .wrapper
-                form(action="").flex-between.order.align
+                form(action="index.html").flex-between.order.align
                     div
                         .data
                             h2 Ваші  дані
@@ -47,21 +47,21 @@ html(lang="en")
                                     input(type="text" required placeholder="+380").yourNumber
                                 div 
                                     label(for="") E-mail
-                                    input(type="email" required placeholder="E-mail")
+                                    input(type="email" placeholder="E-mail")
                         .flex-between.align.delivery
                             div
                                 h2 Спосіб доставки
                                 div 
-                                    input(type="radio" required name="delivery" class="checkbox" id="novaPoshta")
+                                    input(type="radio" name="delivery" class="checkbox" id="novaPoshta")
                                     label(for="novaPoshta" class="checkboxLabel") Нова Пошта
                                 div 
-                                    input(type="radio" required name="delivery" class="checkbox" id="ukrPoshta")
+                                    input(type="radio" name="delivery" class="checkbox" id="ukrPoshta")
                                     label(for="ukrPoshta" class="checkboxLabel") Укрпошта
                                 div 
-                                    input(type="radio" required name="delivery" class="checkbox" id="Meestexpres")
+                                    input(type="radio" name="delivery" class="checkbox" id="Meestexpres")
                                     label(for="Meestexpres" class="checkboxLabel") Meestexpres
                                 div 
-                                    input(type="radio" required name="delivery" class="checkbox" id="curerNovaPoshta")
+                                    input(type="radio" name="delivery" class="checkbox" id="curerNovaPoshta")
                                     label(for="curerNovaPoshta" class="checkboxLabel") Курʼєром Нова Пошта
                                 div 
                                     input(type="radio" required name="delivery" class="checkbox" id="pickup")
@@ -69,13 +69,13 @@ html(lang="en")
                             div 
                                 h2 Спосіб оплати
                                 div 
-                                    input(type="radio" required name="payment" class="checkbox" id="BankTransfer")
+                                    input(type="radio" name="payment" class="checkbox" id="BankTransfer")
                                     label(for="BankTransfer" class="checkboxLabel") Банківський переказ
                                 div 
-                                    input(type="radio" required name="payment" class="checkbox" id="ligPay")
+                                    input(type="radio" name="payment" class="checkbox" id="ligPay")
                                     label(for="ligPay" class="checkboxLabel") LigPay
                                 div 
-                                    input(type="radio" required name="payment" class="checkbox" id="cash")
+                                    input(type="radio" name="payment" class="checkbox" id="cash")
                                     label(for="cash" class="checkboxLabel") готівкою при отриманні
                         div 
                             h2 Адреса доставки
@@ -99,6 +99,6 @@ html(lang="en")
                             p 1731 грн
                         p Доставку сплачує покупець за тарифами транспортної компанії.
                         hr
-                        button Підтвердити
+                        button(type="submit").orderButtonForm Підтвердити
         include components/footer
         script(src="js/script.js") 

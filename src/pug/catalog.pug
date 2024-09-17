@@ -29,8 +29,9 @@ html(lang="en")
                     p каталог
                 .sort.flex 
                     p сортувати
-                    select(name="").select
-                        option(value="") найпопулярніші
+                    div.selectWrap
+                        select(name="").select
+                            option(value="") найпопулярніші
             .catalog.wrapper.flex
                 .w100
                     h1.filterButton Фільтр
@@ -39,11 +40,11 @@ html(lang="en")
                             p Запчастини
                             ul.menu.mainMenu
                                 li
-                                    .flex-between
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Навісне обладнання
-                                        .arrowWrap
-                                            span
+                                        //- .arrowWrap
+                                        //-     span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Ковші
@@ -52,11 +53,11 @@ html(lang="en")
                                         li 
                                             h4 Зуби
                                 li
-                                    .flex-between
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Електросистема
-                                        .arrowWrap
-                                            span
+                                        //- .arrowWrap
+                                        //-     span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Електрообладнання двигуна
@@ -65,11 +66,11 @@ html(lang="en")
                                         li 
                                             h4 Електрообладнання машини
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Гідравлічна система
-                                        .arrowWrap
-                                            span
+                                        //- .arrowWrap
+                                        //-     span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Гідравлічні вузли
@@ -82,11 +83,11 @@ html(lang="en")
                                         li 
                                             h4 Розподільники і клапана
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Ходова система
-                                        .arrowWrap
-                                            span
+                                        //- .arrowWrap
+                                        //-     span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Мости та комплектуючі
@@ -97,16 +98,16 @@ html(lang="en")
                                         li 
                                             h4 Комплектуючі КПП
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Гальмівна система
                                         //- span
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Двигуни та комплектуючі
-                                        .arrowWrap
-                                            span
+                                        //- .arrowWrap
+                                        //-     span
                                     ul.menu.catalogSubMenu
                                         li 
                                             h4 Блок та комплектуючі
@@ -127,17 +128,17 @@ html(lang="en")
                                         li 
                                             h4 Система рециркуляції газів
                                 li  
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Фільтри
                                         //- span
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Масла
                                         //- span
                                 li
-                                    .flex-between 
+                                    .flex-between.catalogMenu
                                         h3 
                                             a(href="") Аксесуари
                                         //- span

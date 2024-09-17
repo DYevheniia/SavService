@@ -170,7 +170,7 @@ if (recentBg !== null) {
                 spare.classList.toggle("sparePartsMenuClick")
             })
             arrowArr.forEach(arrow => {
-                arrow.classList.toggle("arrowBottom")
+                arrow.classList.toggle("arrowRotate")
             })
             for (i = 0; i < color.length; i++) {
                 color[i].classList.toggle("colorFocus")
@@ -204,9 +204,9 @@ if (recentBg !== null) {
                     sparePartsMenu.forEach(spare => {
                         spare.classList.toggle("sparePartsMenuClick")
                     })
-                    arrowArr.forEach(arrow => {
-                        arrow.classList.toggle("arrowBottom")
-                    })
+                    // arrowArr.forEach(arrow => {
+                    //     arrow.classList.toggle("arrowBottom")
+                    // })
                     for (i = 0; i < color.length; i++) {
                         color[i].classList.toggle("colorFocus")
                     }
@@ -227,6 +227,11 @@ const arrowHeader = document.querySelectorAll(".arrow")
 arrowHeader.forEach(arrow => {
     arrow.addEventListener("click", function () {
         const sparePartsMenu = arrow.parentElement.nextElementSibling
+        arrow.children
+        let arrowHeaderSpan = [...arrow.children]
+        arrowHeaderSpan.forEach(arrowHead => {
+            arrowHead.classList.toggle("arrowRotateBottom")
+        })
         sparePartsMenu.classList.toggle("sparePartsMenuBlock")
     })
 })
@@ -336,16 +341,54 @@ if (filterButton) {
 
 // Клік по стрілочці у фільтрі
 
-const arrowWrap = document.querySelectorAll(".arrowWrap")
 
-arrowWrap.forEach(arrow => {
-    arrow.addEventListener("click", function () {
-        sub = arrow.parentElement.nextElementSibling
-        sub.classList.toggle("catalogSubBlock")
-        const arrRotate = [...arrow.children]
-        arrRotate[0].classList.toggle("arrowRotate")
-    })
+const catalogMenu = document.querySelectorAll(".catalogMenu")
+let arrowWrap = 0
+
+catalogMenu.forEach(menu => {
+    if (menu.nextElementSibling) {
+        arrowWrap = document.createElement("div")
+        arrowWrap.classList.add("arrowWrap")
+        menu.appendChild(arrowWrap)
+        arrowSpan = document.createElement("span")
+        arrowWrap.appendChild(arrowSpan)
+    }
+    arrowWrap = document.querySelectorAll(".arrowWrap")
 })
+if (arrowWrap !== 0) {
+    arrowWrap.forEach(arrow => {
+        arrow.addEventListener("click", function () {
+            arrowSpan = arrow.querySelector("span")
+            arrowSpan.classList.toggle("arrowRotate")
+            
+            sub = arrow.parentElement.nextElementSibling
+            sub.classList.toggle("catalogSubBlock")
+        })
+    })
+}
+
+let orderButton = document.querySelectorAll(".orderButtonForm"),
+    delivery = document.querySelector('input[name="delivery"]:checked'),
+    payment = document.querySelector('input[name="payment"]:checked')
+
+if (orderButton.length == 1) {
+    orderButton[0].addEventListener('click', function(event) {
+        delivery = document.querySelector('input[name="delivery"]:checked')
+        payment = document.querySelector('input[name="payment"]:checked')
+        if (!delivery && !payment) {
+            event.preventDefault(); 
+            alert('Будь ласка, виберіть спосіб доставки та спосіб оплати.');
+        }else if (!delivery) {
+            console.log("fesfml;s");
+            event.preventDefault();
+            alert('Будь ласка, виберіть спосіб доставки.');
+        } else if (!payment) {
+            console.log("fesfml;s");
+            event.preventDefault();
+            alert('Будь ласка, виберіть спосіб оплати.');
+        }
+    });
+}
 
 // Клік на більше, якщо checkbox менше 5, більше не показується в іншому випадку +2 та скрол
 
@@ -427,7 +470,6 @@ function sliderTouch () {
 // Слайдер на головній сторінці(машини)
 
 let excavator = [...document.querySelectorAll(".excavator")]
-console.log(excavator);
 if (excavator.length > 0){
     let excavatorI = 0
     animateElement()
