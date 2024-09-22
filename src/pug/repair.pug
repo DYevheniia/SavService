@@ -27,6 +27,9 @@ html(lang="uk")
             .bgAbsoluteOrder
             .recent-bg-bg
             .policyBG
+            .privacyPolicyRepair
+                .crossPolicyRepair
+                include components/policy
             .formContactsAbsolute1
                 form(action="", method="post", class="orderPopap") 
                     .crossOrder
@@ -50,9 +53,7 @@ html(lang="uk")
                         label(for="orderPopapCheckbox" class="flex checkboxLabel") 
                             p Я прочитав (ла) <b class="policyRepair">політику конфіденційності</b> і згоден (на) з вимогами 
                     button(type="submit", name="", class="contactButton") Відправити
-            .privacyPolicyRepair
-                .crossPolicyRepair
-                include components/policy
+            
             .repairBlock
                 .wrapper
                     h1 Ремонтуємо техніку JCB. Зокрема виконуємо наступне:
